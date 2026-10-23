@@ -1,0 +1,33 @@
+---
+interface Props { variant?: 'hero' | 'small'; }
+const { variant = 'hero' } = Astro.props;
+---
+<div class:list={['terrain-art', variant]} aria-hidden="true">
+  <svg viewBox="0 0 720 640" fill="none" preserveAspectRatio="xMidYMid slice">
+    <defs>
+      <pattern id={`grid-${variant}`} width="80" height="80" patternUnits="userSpaceOnUse"><path d="M80 0H0V80" stroke="#9ba888" stroke-opacity=".16" stroke-width=".8" /></pattern>
+      <radialGradient id={`glow-${variant}`}><stop stop-color="#657152" stop-opacity=".4"/><stop offset="1" stop-color="#1c241d" stop-opacity="0"/></radialGradient>
+    </defs>
+    <rect width="720" height="640" fill="#20281f"/>
+    <rect width="720" height="640" fill={`url(#grid-${variant})`}/>
+    <ellipse cx="420" cy="280" rx="320" ry="300" fill={`url(#glow-${variant})`}/>
+    <g stroke="#b0b99a" stroke-opacity=".25" stroke-width="1.1">
+      <path d="M-80 80C50-60 152 45 244 32S360-55 482 30 620 86 802-30M-60 102C45-28 162 71 258 57S370-22 484 60 645 125 808 2M-40 124C52 5 161 94 270 83S373 14 480 88 654 156 813 32M-30 148C62 43 170 123 278 110S384 54 477 119 657 191 822 72M-20 178C64 80 176 151 282 143S388 88 479 151 680 223 827 116M-10 209C75 113 180 182 283 175S398 120 478 183 676 254 825 154M0 240C85 143 193 219 288 205S404 153 484 215 674 283 813 194M9 270C91 181 200 249 298 238S414 188 489 247 680 314 802 231M21 300C98 214 207 280 308 271S426 219 499 281 681 348 792 268M40 331C110 247 215 317 319 304S437 255 510 316 683 383 781 307"/>
+      <path d="M-60 440C60 358 100 415 168 395S233 319 300 354 335 445 428 430 531 361 620 401 738 462 810 407M-58 467C60 385 104 447 180 425S240 352 298 382 338 478 435 459 541 397 626 433 737 495 811 445M-45 501C63 419 109 479 189 456S243 386 300 414 342 507 444 490 546 430 631 469 742 529 809 481M-39 535C70 454 116 510 197 489S245 422 305 448 345 540 452 521 551 466 634 504 747 563 809 517M-35 569C80 489 125 543 207 523S253 455 310 482 355 576 460 554 563 499 640 540 754 597 815 553M-28 605C84 528 135 578 218 557S264 489 320 517 361 608 472 589 572 533 650 575 760 631 820 588M-18 642C93 563 145 614 225 593S271 521 333 551 375 643 486 625 586 569 663 612 769 667 825 627"/>
+      <path d="M251 190c25-37 80-34 110 1s81 36 111 3 69-11 96 15M247 171c31-44 88-41 119-3s71 29 102-3 79-19 108 20M244 153c33-49 95-50 128-10s67 21 96-11 84-21 119 21"/>
+    </g>
+    <path d="M495-20c-82 115-21 163-94 249s-76 106-38 171 3 118-63 264" stroke="#829792" stroke-width="8" stroke-opacity=".16"/>
+    <path d="M495-20c-82 115-21 163-94 249s-76 106-38 171 3 118-63 264" stroke="#a0bab0" stroke-width="1" stroke-opacity=".35"/>
+    <g transform="translate(434 281)">
+      <circle r="79" stroke="#e0a56d" stroke-opacity=".16"/><circle r="49" stroke="#e0a56d" stroke-opacity=".26"/>
+      <path d="M0-100V-70M0 70v30M-100 0h30M70 0h30" stroke="#d2ad7b" stroke-opacity=".6"/>
+      <path d="m0-45 17 60L0 5l-17 10Z" fill="#d59a60"/>
+      <path d="M0-45V5l17 10Z" fill="#f3c58d"/>
+      <circle r="4" fill="#e9e5d7"/>
+    </g>
+    <g fill="#b8c1a2" fill-opacity=".25"><path d="m132 288-12 23h24Zm25 19-9 18h18Zm-47 18-9 18h18Zm418-164-12 24h24Zm26 20-10 20h20Zm-52 7-8 17h16Zm92 283-12 23h24Zm27 18-10 21h20Zm-51 6-9 18h18Z"/></g>
+    <g stroke="#adb797" stroke-opacity=".4"><path d="M40 40h24M52 28v24M648 40h24M660 28v24M40 600h24M52 588v24M648 600h24M660 588v24"/></g>
+  </svg>
+  <div class="terrain-north"><span>N</span><span>↑</span></div>
+  <div class="terrain-caption">ESTUDIO DEL TERRENO <span>FIG. 001 / CONCEPTUAL</span></div>
+</div>

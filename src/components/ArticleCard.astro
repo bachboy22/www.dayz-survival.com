@@ -1,0 +1,11 @@
+---
+import { demoArticle } from '../data/demo';
+import Icon from './Icon.astro';
+---
+<article class="featured-card" data-search-result>
+  <div class="card-kicker"><span>01 / LECTURA DE CAMPO</span><span class="pill demo">Demostración</span></div>
+  <h3><a href={`/manual/${demoArticle.slug}/`}>{demoArticle.title}</a></h3>
+  <p>{demoArticle.summary}</p>
+  <div class="tag-list" style="margin-top:18px">{demoArticle.tags.map(tag => <span class="tag">{tag}</span>)}</div>
+  <div class="card-bottom"><span class="card-meta"><Icon name="clock" size={15}/>{demoArticle.readingMinutes} min de lectura · {demoArticle.id}</span><a class="text-link" href={`/manual/${demoArticle.slug}/`}>Leer el ejemplo <Icon size={17}/></a></div>
+</article>

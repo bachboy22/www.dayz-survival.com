@@ -13,3 +13,12 @@ dist/
 *AUD-130*.zip
 private/
 secrets/
+artifacts/
+test-results/
+playwright-report/
+coverage/
+*.zip
+*.bundle
+*.patch
+imports/
+editorial-private/

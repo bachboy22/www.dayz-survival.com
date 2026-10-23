@@ -1,0 +1,5 @@
+---
+interface Props { compact?: boolean; }
+const { compact = false } = Astro.props;
+---
+<aside class:list={['demo-notice', { compact }]} aria-label="Estado del contenido"><span class="demo-label">DEMOSTRACIÓN</span><p>Ejemplo sintético para probar el lector.{!compact && ' No pertenece a la Fuente Maestra y no ofrece instrucciones de juego.'}</p></aside>
