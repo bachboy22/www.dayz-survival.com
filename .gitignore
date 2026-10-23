@@ -1,0 +1,15 @@
+node_modules/
+dist/
+.astro/
+.env
+.env.*
+!.env.example
+*.log
+.DS_Store
+# canonical masters and editorial backups MUST NOT be checked in
+*Fuente_Maestra*.zip
+*Rama_CHR*.zip
+*Rama_Separada*.zip
+*AUD-130*.zip
+private/
+secrets/
