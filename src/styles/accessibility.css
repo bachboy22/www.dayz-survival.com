@@ -1,0 +1,84 @@
+/* WEB-003: readable supporting text, explicit focus and narrow-width reflow.
+   Never conceal overflow to make a test pass. Relative units preserve zoom. */
+@layer accessibility {
+  :root { --support-size: .8125rem; }
+  body { overflow-wrap: anywhere; }
+  .container, .hero-copy, .reader, .article-layout > *, .manual-layout > *,
+  .manual-preview > *, .quickcard-layout > *, .atlas-grid > *, .status-item > div { min-width: 0; }
+  :is(a, button, input):focus-visible { outline: 3px solid var(--accent); outline-offset: 3px; }
+  .reader :focus-visible { outline-color: #67421f; }
+  h2[tabindex="-1"]:focus { outline: 3px solid #67421f; outline-offset: 5px; }
+  .brand { min-width: 0; }
+  .brand > span:last-child { min-width: 0; }
+  .brand-mark { flex-shrink: 0; }
+  .brand small { font-size: .75rem; letter-spacing: .02em; line-height: 1.4; }
+  .edition-inner { font-size: .75rem; flex-wrap: wrap; gap: 6px 16px; }
+  .eyebrow, .hero-copy .eyebrow, .section-heading .eyebrow,
+  .footer-note .eyebrow { font-size: .75rem; line-height: 1.6; }
+  #primary-navigation > a { font-size: .875rem; min-height: 44px; }
+  .menu-toggle { display: none; min-width: 44px; min-height: 44px; flex-shrink: 0; align-items: center; justify-content: center; }
+  .hero-footnote, .hero-art-caption, .card-meta, .card-kicker > span:first-child,
+  .status-item strong, .status-item small, .list-heading span,
+  .side-panel h2, .side-panel .side-info, .article-meta, .article-bottom p,
+  .reader .reader-label, .reader-tools .tool-label, .filter-row > span,
+  .search-status, .search-help, .demo-label, .demo-notice p,
+  .footer-brand span, .footer-top p, .footer-bottom,
+  .pill, .atlas-card .pill, .tag, .breadcrumb { font-size: var(--support-size); line-height: 1.65; }
+  .tag-list, .card-kicker, .card-bottom, .section-heading, .hero-art-caption,
+  .reader-tools, .footer-bottom { flex-wrap: wrap; }
+  .hero-art-caption { gap: 6px 18px; }
+  .hero-art-caption span:last-child { text-align: start; }
+  .terrain-caption { font-size: .75rem; flex-wrap: wrap; line-height: 1.6; }
+  .terrain-caption span { min-width: 0; }
+  .status-item { align-items: start; }
+  .status-number { flex-shrink: 0; }
+  .side-panel a, .article-nav a, .text-link, .filter,
+  .support-panel p, .empty-slot p { font-size: .875rem; }
+  .article-nav li { margin-block: 6px; }
+  .article-nav a { padding-block: 8px; }
+  .section-heading .text-link { margin-top: 0; white-space: normal; }
+  .pill, .tag { max-width: 100%; }
+  .reader { padding: clamp(1rem, 4vw, 3.625rem); }
+  .reader-tools { gap: 16px; }
+  .reader .size-controls { display: none; flex-wrap: wrap; gap: 8px; }
+  .js .reader .size-controls { display: flex; }
+  .size-controls button { width: 44px; height: 44px; flex-shrink: 0; font-size: 1rem; }
+  .size-controls button[aria-disabled="true"] { opacity: 1; color: #626d55; border-color: #859079; cursor: default; }
+  .reader .quick-sheet li, .reader .reference-list { font-size: var(--reader-size); line-height: 1.85; }
+  .reader .quick-sheet { padding: clamp(1rem, 3vw, 1.5625rem); }
+  .filter { min-height: 44px; }
+  .filter-row { gap: 8px; }
+  .results-heading { font-size: 1.4rem; margin-block: 24px 12px; }
+  table { table-layout: fixed; }
+  th, td { font-size: var(--support-size); overflow-wrap: anywhere; }
+  .atlas-card::after { display: none; } /* No unexplained decorative pseudo-cartography. */
+  @media (max-width: 64rem) {
+    .header-inner { flex-wrap: wrap; gap: 12px; padding-block: 16px; }
+    .brand { flex: 1; }
+    .js .menu-toggle { display: inline-flex; }
+    #primary-navigation { width: 100%; display: flex; flex-wrap: wrap; gap: 8px; padding-top: 12px; }
+    .js #primary-navigation { display: none; }
+    .js #primary-navigation.is-open { display: flex; }
+    #primary-navigation > a { padding: 12px; flex: 1 1 8rem; text-align: center; }
+    #primary-navigation .nav-search { padding-left: 12px; border-left: 0; justify-content: center; }
+  }
+  @media (max-width: 48rem) {
+    .hero, .manual-preview, .atlas-placeholder { grid-template-columns: minmax(0, 1fr); }
+    .hero h1 { font-size: clamp(2.5rem, 10vw, 4.2rem); }
+    .hero .button-group { flex-direction: row; }
+    .terrain-art.hero { aspect-ratio: 1.4; }
+    .terrain-caption { left: 18px; right: 18px; bottom: 16px; gap: 2px 12px; }
+    .section-heading { align-items: start; }
+    .status-row { grid-template-columns: minmax(0, 1fr); }
+    .status-item + .status-item, .status-item:last-child { border-left: 0; border-top: 1px solid var(--line); padding: 12px 0 0; grid-column: auto; }
+    .status-item:last-child strong, .status-item:last-child small { display: block; margin-left: 0; }
+    .brand strong { font-size: 1rem; }
+    .reader .quick-sheet h2 { font-size: 1.5rem; }
+    .footer-top { flex-direction: column; }
+  }
+  @media (forced-colors: active) {
+    :is(a, button, input):focus-visible, h2[tabindex="-1"]:focus { outline-color: Highlight; }
+    .button, .pill, .tag, .filter, .size-controls button { border: 1px solid ButtonText; }
+    .filter[aria-pressed="true"] { outline: 2px solid Highlight; }
+  }
+}

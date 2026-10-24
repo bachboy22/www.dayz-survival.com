@@ -1,0 +1,7 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DemoNotice from '../../components/DemoNotice.astro';
+import ArticleCard from '../../components/ArticleCard.astro';
+import Icon from '../../components/Icon.astro';
+---
+<Layout title="Manual"><div class="container"><header class="page-intro"><nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>/</span><span>Manual</span></nav><span class="eyebrow">01 / BIBLIOTECA DE CAMPO</span><h1>El manual.</h1><p>Lectura completa, referencias conectadas y fichas de consulta. Esta edición permite probar el recorrido antes de incorporar contenidos aprobados.</p><DemoNotice/></header><div class="page-content manual-layout"><aside class="side-panel" aria-label="Secciones del manual"><h2>EXPLORAR</h2><ul><li><a href="/manual/" aria-current="page">Todos los ejemplos <span>01</span></a></li><li><a href="/fichas/">Fichas rápidas <span>01</span></a></li><li><a href="/buscar/">Buscar <Icon name="search" size={16}/></a></li></ul><p class="side-info">La colección editorial real aún no está disponible en esta web. No se han importado los 84 artículos aprobados.</p></aside><section aria-labelledby="entries-title"><div class="list-heading"><h2 id="entries-title">Una primera lectura</h2><span>1 ENTRADA DEMO</span></div><ArticleCard/><div class="empty-slot"><span class="eyebrow">ESPACIO RESERVADO AL CONTENIDO APROBADO</span><p>Las próximas lecturas se incorporarán mediante una importación autorizada.</p></div></section></div></div></Layout>

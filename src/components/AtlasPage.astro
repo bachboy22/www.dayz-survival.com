@@ -1,0 +1,10 @@
+---
+import Layout from '../layouts/Layout.astro';
+import DemoNotice from './DemoNotice.astro';
+import Terrain from './Terrain.astro';
+import Icon from './Icon.astro';
+interface Props { map: 'Chernarus Plus' | 'Livonia'; lane: 'CHR' | 'LIV'; }
+const { map, lane } = Astro.props;
+const chernarus = lane === 'CHR';
+---
+<Layout title={`Atlas de ${map}`}><div class="container"><header class="page-intro"><nav class="breadcrumb" aria-label="Ruta de navegación"><a href="/">Inicio</a><span>/</span><span>Atlas de {map}</span></nav><span class="eyebrow">TERRITORIOS / {lane}</span><h1>{map}.</h1><p>Un espacio reservado para el atlas de {map}. Esta vista muestra la estructura de la plataforma; el contenido cartográfico no está publicado ni se incorpora a esta demostración.</p><DemoNotice compact/></header><section class="page-content atlas-placeholder" aria-labelledby="atlas-state"><div><span class="pill">{chernarus ? 'Sin autorización de publicación' : 'Pendiente de revisión editorial'}</span><h2 id="atlas-state">El terreno tiene<br/>su propio cuaderno.</h2><p>{chernarus ? 'CHR r02 tiene aprobación editorial independiente. No está certificada técnicamente para 1.30.164078 ni autorizada para publicación; su contenido permanece fuera de esta web.' : 'Livonia v0.1 tiene cuatro pilotos en su propia rama editorial. Sus identificadores LIV no ocupan los espacios históricos de Chernarus.'}</p><aside class="lane-note"><p>Esta vista no incluye ubicaciones, rutas, apariciones de botín ni datos reales del mapa. La ilustración es conceptual y no sirve para orientarse dentro del juego.</p></aside><a class="button secondary" href="/fuentes/">Ver el estado de las fuentes <Icon size={17}/></a></div><figure><Terrain variant="small"/><figcaption class="hero-art-caption"><span>ESPACIO DEL ATLAS / {lane}</span><span>Esquema conceptual · no representa cartografía verificable</span></figcaption></figure></section></div></Layout>
