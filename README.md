@@ -38,7 +38,7 @@ npx playwright install --with-deps chromium
 npm test
 ```
 
-`npm test` ejecuta tipos, unitarias, validación de datos, compilación y pruebas de navegador. La suite recorre las nueve vistas principales en escritorio y móvil, usa axe para detectar problemas de accesibilidad y genera cuatro capturas en `artifacts/screenshots/`. Los informes se generan en `artifacts/` y no se versionan. Para usar un Chromium ya instalado, se admite `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` con su ruta absoluta; la opción normal utiliza el navegador instalado por Playwright.
+`npm test` ejecuta tipos, unitarias, validación de datos, compilación y pruebas de navegador. La suite recorre las nueve vistas principales en escritorio y móvil, usa axe para detectar problemas de accesibilidad y genera cuatro capturas base en `artifacts/screenshots/`. También comprueba teclado/foco y zoom real de Chromium al 200% y 400%, con métricas y 18 capturas adicionales en `artifacts/zoom/`; la ampliación móvil se identifica por separado como pinch emulado. Los informes se generan en `artifacts/` y no se versionan. Para usar un Chromium ya instalado, se admite `PLAYWRIGHT_CHROMIUM_EXECUTABLE_PATH` con su ruta absoluta; la opción normal utiliza el navegador instalado por Playwright.
 
 ## Límites editoriales
 
@@ -53,6 +53,7 @@ El contrato de importación valida en memoria una exportación autorizada y su l
 - [Reglas del proyecto](AGENTS.md) y [plan suministrado](docs/PLAN_MVP.md).
 - [Contrato de importación](docs/IMPORT-CONTRACT.md), [arquitectura](docs/ADR-001.md), [desarrollo y revisión](docs/DEVELOPMENT.md).
 - [Informe histórico de entrega](docs/ENTREGA-v0.1.md), [pendientes vigentes](docs/PENDING.md), [revisión WEB-002](docs/WEB-002-REVIEW.md) y [descripción original del PR](docs/PR-v0.1.md).
+- [Accesibilidad y protocolo manual WEB-003](docs/WEB-003-ACCESSIBILITY.md) y [norma visual permanente ART-001](docs/ART-001-VISUAL-POLICY.md).
 - [Respuesta histórica del intento de escritura GitHub](docs/GITHUB-WRITE-RESULT.json).
 
 ## Estado actual de GitHub · 24 de octubre de 2026
@@ -60,7 +61,7 @@ El contrato de importación valida en memoria una exportación autorizada y su l
 El bloqueo inicial de escritura HTTP 403 **está resuelto**. El repositorio remoto `bachboy22/www.dayz-survival.com` ya contiene los commits originales, conservados sin reescritura:
 
 - `main`: `7dbc4d3c761e31ffc3666f6e0f7a7e35c9e7f34f` (base original).
-- `feat/web-v0.1`: `af657ed3cc5f8fe85204f53e529ce10dfdc232be` (MVP de Codex) más los ajustes documentales de revisión WEB-002.
+- `feat/web-v0.1`: `af657ed3cc5f8fe85204f53e529ce10dfdc232be` (MVP de Codex) más los ajustes documentales WEB-002 y las mejoras incrementales de accesibilidad/arte WEB-003 + ART-001.
 - [PR #2](https://github.com/bachboy22/www.dayz-survival.com/pull/2): abierto para revisión, **sin fusionar**.
 - [WEB-001](https://github.com/bachboy22/www.dayz-survival.com/issues/1): integración cerrada.
 - Las comprobaciones de CI originales [del PR](https://github.com/bachboy22/www.dayz-survival.com/actions/runs/40054967601) y [del push](https://github.com/bachboy22/www.dayz-survival.com/actions/runs/40054875547) terminaron correctamente.
@@ -68,3 +69,5 @@ El bloqueo inicial de escritura HTTP 403 **está resuelto**. El repositorio remo
 Los archivos `docs/ENTREGA-v0.1.md`, `docs/PR-v0.1.md`, `docs/CONTROL.md` y `docs/GITHUB-WRITE-RESULT.json` se mantienen como **registro histórico de la etapa local**, por lo que allí figura todavía el antiguo error 403. No describen el estado actual de GitHub. El ZIP original sigue respaldado fuera del repositorio.
 
 **Sin fusión ni despliegue autorizado.** El PR no publica la web ni lleva contenido privado a Cloudflare. La previsualización editorial privada se desarrolla en una fase separada.
+
+Las pruebas NVDA + Firefox y Narrador + Edge siguen pendientes de ejecución manual en Windows. Los resultados de Playwright/axe no se presentan como pruebas de lectores de pantalla ni como certificación WCAG. CHR r02 está aprobada editorialmente, pero no certificada para 1.30.164078 ni autorizada para publicación. No se admiten imágenes finales generadas por IA; cualquier recurso visual futuro debe cumplir ART-001.

@@ -30,6 +30,8 @@ The integration suite checks the nine core routes on desktop and mobile, perform
 
 Reports are generated under `artifacts/`: a JSON result, an HTML Playwright report, failure traces, and desktop/mobile screenshots for the home and article pages. These generated artifacts are ignored by Git and may be included separately with a reviewed delivery. Passing axe checks does not establish complete WCAG conformance; manually review focus order, zoom, screen-reader announcements and real content when available.
 
+WEB-003 adds `accessibility.spec.ts` and the `zoom` project. The latter measures actual Chromium browser zoom via a test-only extension in a temporary profile and separately records mobile pinch emulation; see `docs/WEB-003-ACCESSIBILITY.md` for exact dimensions, screenshot capture and the pending NVDA/Firefox and Narrator/Edge protocols. `artifacts/zoom/` is included by the existing CI artifact upload. Run one Playwright command at a time to avoid conflicting report/trace output. Visual changes must follow `docs/ART-001-VISUAL-POLICY.md`; no final AI-generated images are permitted.
+
 ## Branches and pull requests
 
 Use a short-lived `feat/…`, `fix/…` or `chore/…` branch. Keep the master manuscripts and private archive packages outside the checkout. Review the staged diff and file list before committing; `.gitignore` is a convenience, not a security boundary.

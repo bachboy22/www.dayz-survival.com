@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/accessibility.css';
 import Icon from '../components/Icon.astro';
 interface Props { title: string; description?: string; }
 const { title, description = 'Prototipo local del manual de campo DAYZ-SURVIVAL. Solo contenido de demostración.' } = Astro.props;
@@ -37,15 +38,35 @@ const nav = [{ label: 'Inicio', href: '/' }, { label: 'Manual', href: '/manual/'
       const nav = document.querySelector<HTMLElement>('#primary-navigation');
       if (toggle && nav) {
         document.documentElement.classList.add('js');
-        toggle.addEventListener('click', () => {
-          const open = toggle.getAttribute('aria-expanded') !== 'true';
+        const mobile = window.matchMedia('(max-width: 64rem)');
+        let lastMenuFocus: Element | null = null;
+        document.addEventListener('focusin', (event) => {
+          const target = event.target;
+          if (target instanceof Element && target !== document.body) {
+            lastMenuFocus = toggle.contains(target) || nav.contains(target) ? target : null;
+          }
+        });
+        document.addEventListener('pointerdown', (event) => {
+          if (event.target instanceof Node && !toggle.contains(event.target) && !nav.contains(event.target)) lastMenuFocus = null;
+        });
+        function setOpen(open: boolean) {
+          if (!toggle || !nav) return;
           toggle.setAttribute('aria-expanded', String(open));
           toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
           nav.classList.toggle('is-open', open);
+        }
+        toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+        mobile.addEventListener('change', () => {
+          // CSS can hide the focused element before matchMedia's change event.
+          // Retain the last menu focus only when the browser has fallen back to body.
+          const active = document.activeElement === document.body ? lastMenuFocus : document.activeElement;
+          setOpen(false);
+          if (mobile.matches && nav.contains(active)) toggle.focus();
+          if (!mobile.matches && active === toggle) (nav.querySelector<HTMLAnchorElement>('a[aria-current="page"]') ?? nav.querySelector<HTMLAnchorElement>('a'))?.focus();
         });
         document.addEventListener('keydown', (event) => {
-          if (event.key === 'Escape' && toggle.getAttribute('aria-expanded') === 'true') {
-            toggle.setAttribute('aria-expanded', 'false'); toggle.setAttribute('aria-label', 'Abrir menú'); nav.classList.remove('is-open'); toggle.focus();
+          if (event.key === 'Escape' && mobile.matches && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false); toggle.focus();
           }
         });
       }

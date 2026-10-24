@@ -20,8 +20,9 @@ export default defineConfig({
       : {},
   },
   projects: [
-    { name: 'desktop', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 1000 } } },
-    { name: 'mobile', use: { ...devices['Pixel 7'] } },
+    { name: 'desktop', testIgnore: '**/zoom.spec.ts', use: { ...devices['Desktop Chrome'], viewport: { width: 1440, height: 1000 } } },
+    { name: 'mobile', testIgnore: '**/zoom.spec.ts', use: { ...devices['Pixel 7'] } },
+    { name: 'zoom', testMatch: '**/zoom.spec.ts' },
   ],
   webServer: {
     command: 'npm run preview -- --ignore-lock --port 4321',
