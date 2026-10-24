@@ -52,7 +52,19 @@ El contrato de importación valida en memoria una exportación autorizada y su l
 
 - [Reglas del proyecto](AGENTS.md) y [plan suministrado](docs/PLAN_MVP.md).
 - [Contrato de importación](docs/IMPORT-CONTRACT.md), [arquitectura](docs/ADR-001.md), [desarrollo y revisión](docs/DEVELOPMENT.md).
-- [Informe de entrega y pruebas](docs/ENTREGA-v0.1.md), [pendientes](docs/PENDING.md) y [descripción preparada de PR](docs/PR-v0.1.md).
-- [Respuesta exacta del intento de escritura GitHub](docs/GITHUB-WRITE-RESULT.json).
+- [Informe histórico de entrega](docs/ENTREGA-v0.1.md), [pendientes vigentes](docs/PENDING.md), [revisión WEB-002](docs/WEB-002-REVIEW.md) y [descripción original del PR](docs/PR-v0.1.md).
+- [Respuesta histórica del intento de escritura GitHub](docs/GITHUB-WRITE-RESULT.json).
 
-La rama local es `feat/web-v0.1`, sobre `bootstrap/local-base`. GitHub rechazó la escritura con HTTP 403; no se creó un commit remoto ni un PR. El ZIP de entrega incluye el código, el build estático, evidencias y un bundle Git con el historial local. El README original suministrado se conserva en `docs/BOOTSTRAP-README.md`.
+## Estado actual de GitHub · 24 de octubre de 2026
+
+El bloqueo inicial de escritura HTTP 403 **está resuelto**. El repositorio remoto `bachboy22/www.dayz-survival.com` ya contiene los commits originales, conservados sin reescritura:
+
+- `main`: `7dbc4d3c761e31ffc3666f6e0f7a7e35c9e7f34f` (base original).
+- `feat/web-v0.1`: `af657ed3cc5f8fe85204f53e529ce10dfdc232be` (MVP de Codex) más los ajustes documentales de revisión WEB-002.
+- [PR #2](https://github.com/bachboy22/www.dayz-survival.com/pull/2): abierto para revisión, **sin fusionar**.
+- [WEB-001](https://github.com/bachboy22/www.dayz-survival.com/issues/1): integración cerrada.
+- Las comprobaciones de CI originales [del PR](https://github.com/bachboy22/www.dayz-survival.com/actions/runs/40054967601) y [del push](https://github.com/bachboy22/www.dayz-survival.com/actions/runs/40054875547) terminaron correctamente.
+
+Los archivos `docs/ENTREGA-v0.1.md`, `docs/PR-v0.1.md`, `docs/CONTROL.md` y `docs/GITHUB-WRITE-RESULT.json` se mantienen como **registro histórico de la etapa local**, por lo que allí figura todavía el antiguo error 403. No describen el estado actual de GitHub. El ZIP original sigue respaldado fuera del repositorio.
+
+**Sin fusión ni despliegue autorizado.** El PR no publica la web ni lleva contenido privado a Cloudflare. La previsualización editorial privada se desarrolla en una fase separada.
