@@ -71,3 +71,7 @@ Los archivos `docs/ENTREGA-v0.1.md`, `docs/PR-v0.1.md`, `docs/CONTROL.md` y `doc
 **Sin fusión ni despliegue autorizado.** El PR no publica la web ni lleva contenido privado a Cloudflare. La previsualización editorial privada se desarrolla en una fase separada.
 
 Las pruebas NVDA + Firefox y Narrador + Edge siguen pendientes de ejecución manual en Windows. Los resultados de Playwright/axe no se presentan como pruebas de lectores de pantalla ni como certificación WCAG. CHR r02 está aprobada editorialmente, pero no certificada para 1.30.164078 ni autorizada para publicación. No se admiten imágenes finales generadas por IA; cualquier recurso visual futuro debe cumplir ART-001.
+
+## Prototipo DESIGN-001-B
+
+Esta rama conserva el MVP y amplía su experiencia con datos exclusivamente DEMO. Consulta [decisiones y ejecución local](docs/DESIGN-001-B.md) y [pruebas y límites](docs/DESIGN-001-B-RESULTS.md). El paquete Windows WEB-004 es una entrega separada congelada; no se modifica ni sustituye.

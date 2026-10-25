@@ -1,7 +1,7 @@
 import { test, expect } from '@playwright/test';
 
 test('heading levels do not skip and tab order never uses positive tabindex', async ({ page }) => {
-  for (const route of ['/', '/manual/', '/manual/leer-una-ficha/', '/fichas/', '/buscar/', '/atlas/chernarus/', '/atlas/livonia/', '/fuentes/', '/acerca/']) {
+  for (const route of ['/', '/manual/', '/manual/leer-una-ficha/', '/fichas/', '/buscar/', '/atlas/chernarus/', '/atlas/livonia/', '/fuentes/', '/acerca/', '/aprender/', '/herramientas/', '/atlas/', '/manual/distinguir-los-estados/', '/manual/explorar-un-atlas-pendiente/', '/fichas/leer-una-ficha/']) {
     await page.goto(route);
     const levels = await page.locator('h1,h2,h3,h4,h5,h6').evaluateAll(elements => elements
       .filter(element => element.getClientRects().length > 0)
@@ -38,7 +38,7 @@ test('search announcements include query and filter without moving focus', async
   await input.fill('cuaderno');
   await expect(status).toContainText('1 resultado de demostración para «cuaderno»');
   await expect(input).toBeFocused();
-  await input.fill('ficha'); // Still one result; live text must actually change.
+  await input.fill('ficha'); // Query changes; announcement must change even if counts coincide.
   await expect(status).toContainText('para «ficha»');
   const filter = page.getByRole('button', { name: 'Lectura', exact: true });
   await filter.focus();

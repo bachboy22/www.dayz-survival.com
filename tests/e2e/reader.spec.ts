@@ -40,16 +40,16 @@ test('search normalizes accents, filters tags, and recovers from no results', as
   const input = page.getByPlaceholder('Buscar en el manual', { exact: true });
   const results = page.locator('#search-results');
   await input.fill('como');
-  await expect(results.getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
+  await expect(results.getByRole('heading', { level: 3 }).getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
   await input.fill('cuaderno');
-  await expect(results.getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
+  await expect(results.getByRole('heading', { level: 3 }).getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
   await page.getByRole('button', { name: 'Lectura', exact: true }).click();
   await expect(page.getByRole('button', { name: 'Lectura', exact: true })).toHaveAttribute('aria-pressed', 'true');
-  await expect(results.getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
+  await expect(results.getByRole('heading', { level: 3 }).getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
   await input.fill('zzzz-no-coincide');
   await expect(page.getByText('No se encontraron resultados', { exact: false })).toBeVisible();
   await input.fill('');
-  await expect(results.getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
+  await expect(results.getByRole('heading', { level: 3 }).getByRole('link', { name: /Cómo leer una ficha de campo/i })).toBeVisible();
 });
 
 test('skip link moves keyboard focus to the content', async ({ page }) => {

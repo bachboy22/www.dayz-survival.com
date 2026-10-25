@@ -1,0 +1,64 @@
+{
+  "baseline": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba",
+  "protected_source_files": [
+    {
+      "path": "AGENTS.md",
+      "sha256": "bba04c5d43b5fda35088361db51df6373329bc8937fe15b30a331a4d8ae7acf7",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": "package.json",
+      "sha256": "265be86ca7113fd4f9abd3a71bb17b452caaa6ef258d0718756bca8f4547e3c2",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "f68645f81925f86a370c157b961149c034bfd21c60197a8395eb3b7b544cd54c",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": "src/data/demo.ts",
+      "sha256": "d561cb102ee8a1891b0f211f460c4c329077c0483fad0f910547af784d17e6ee",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": "src/lib/content.ts",
+      "sha256": "e799ab9765ad404e8bc90fb126f50a57a1a0021cb576a2bcb925d5d57b6c3a88",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": "scripts/validate-import.ts",
+      "sha256": "316fd32b9c38535a7b1e7ebc709b7e2644f163c83c84383b98fb32426af3811c",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": "docs/ART-001-VISUAL-POLICY.md",
+      "sha256": "d60924ecd269f994d8be1ac2b80ae54e91fe9aedaaedea4365bacf38a89861df",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "sha256": "b14cb743ebe26469f181d44a72054dbfda7790273cae32a8edacce6c473c4a5c",
+      "unchanged_from": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba"
+    }
+  ],
+  "web004": {
+    "sha256": "fbc5dde13575856ae144df8cda4b3e36d95b567cea2eb248967a167e4290ec60",
+    "unchanged": true,
+    "bytes": 43999242
+  },
+  "public_output_scan": {
+    "files": 22,
+    "forbidden_patterns_found": 0,
+    "scope": "Known credential formats and private-path markers; not a complete secret-detector or private-manuscript comparison."
+  },
+  "original_manuscripts_accessed": 0,
+  "historical_baseline": {
+    "version": "v0.16.1",
+    "articles": 84,
+    "ids": 294,
+    "packages": 42,
+    "derived_matrices_not_slots": 4,
+    "livonia_separate": true
+  }
+}
