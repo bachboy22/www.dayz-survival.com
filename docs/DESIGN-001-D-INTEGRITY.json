@@ -1,0 +1,439 @@
+{
+  "audit": "DESIGN-001-D",
+  "audited_commit": "6091b56667b9042c3da72e42fd1dc7e206b56b8f",
+  "application_modified": false,
+  "baseline_files": [
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 863,
+      "sha256": "0af02c0cf7d890047236091cad0ce72d6d3cd1624f84e573df080f3b373d095a"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1547,
+      "sha256": "b14cb743ebe26469f181d44a72054dbfda7790273cae32a8edacce6c473c4a5c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 328,
+      "sha256": "513c7a718981096c9df40ff6a735bdb04d2b1ead13edf13dfc18358da5a3a5ec"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 35,
+      "sha256": "cde76ca04e048c3eba070a2c0dfcf5b723cf6014eab177157096b924f24ec4ca"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 8,
+      "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1543,
+      "sha256": "bba04c5d43b5fda35088361db51df6373329bc8937fe15b30a331a4d8ae7acf7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 6290,
+      "sha256": "691f0aa23593c21afc09222f76761066ecd6fe673a6426d946bac84bc226c174"
+    },
+    {
+      "path": "astro.config.mjs",
+      "bytes": 161,
+      "sha256": "83416be3934a3e8e5c9e000cbe95053aef15256e127289baafcc5d0cf9519a17"
+    },
+    {
+      "path": "docs/ADR-001.md",
+      "bytes": 2101,
+      "sha256": "a59d0ce18aa00e272f7a3b56b664582822f9d52c4ac812a1fdab0c9540ff23f4"
+    },
+    {
+      "path": "docs/ART-001-VISUAL-POLICY.md",
+      "bytes": 8029,
+      "sha256": "d60924ecd269f994d8be1ac2b80ae54e91fe9aedaaedea4365bacf38a89861df"
+    },
+    {
+      "path": "docs/BOOTSTRAP-README.md",
+      "bytes": 722,
+      "sha256": "191e78f4832e8fe15345898b63d95c33b7b220d06b0ea8ac3385e0212ba7c73a"
+    },
+    {
+      "path": "docs/CHANGED-FILES.md",
+      "bytes": 1734,
+      "sha256": "52dc850463b0fc1af5e95fda32f32a9a9ef735dc9f29dfa67504175a00113de4"
+    },
+    {
+      "path": "docs/CONTROL.md",
+      "bytes": 648,
+      "sha256": "2fa7d714af2327e722cb44e04ee2b215c5b79865ecd3cfc96591e644d1aad854"
+    },
+    {
+      "path": "docs/DESIGN-001-B-BOUNDARIES.json",
+      "bytes": 2280,
+      "sha256": "2ab58c20060670d8046684f14ff6d574dc1b3b0730c60cf9135178d0887ec6c5"
+    },
+    {
+      "path": "docs/DESIGN-001-B-RESULTS.md",
+      "bytes": 8230,
+      "sha256": "3fe5d04faa3d491cf0b408eb6e2e8d088b2f3150ca901598ee2f98271e6d1d52"
+    },
+    {
+      "path": "docs/DESIGN-001-B.md",
+      "bytes": 13700,
+      "sha256": "656b4e1741b417cead8dacaac0bf73af89690d7cff0dbdb3e53d7c03c3de7e54"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "bytes": 4420,
+      "sha256": "67e4d8780843067a88c8bd8be25c71f256e9c8054e00519eb5ec0c612dab4f74"
+    },
+    {
+      "path": "docs/ENTREGA-v0.1.md",
+      "bytes": 8160,
+      "sha256": "7bab050c0a6fb560c2d5dfb21cb24d16c9f902d95c3c82c6b193767e178aa348"
+    },
+    {
+      "path": "docs/GITHUB-WRITE-RESULT.json",
+      "bytes": 448,
+      "sha256": "949663f22919dbd0a924881ee0a296bceaa31551510dcecc0518fb3115351adb"
+    },
+    {
+      "path": "docs/IMPORT-CONTRACT.md",
+      "bytes": 5380,
+      "sha256": "ca72146964fd740a5ca1e4f1ec255229ef09dc71701846c9035815aaa5e16adf"
+    },
+    {
+      "path": "docs/PENDING.md",
+      "bytes": 2078,
+      "sha256": "906856de41698fdf656f7ad2f1febf6729d3a2de2f78c2a766c41a379d8e5cf2"
+    },
+    {
+      "path": "docs/PLAN_MVP.md",
+      "bytes": 1335,
+      "sha256": "0d50b505f1e0f30e6c72c889f8e625398da07ab6efe5bdc40972a7995d3d222a"
+    },
+    {
+      "path": "docs/PR-v0.1.md",
+      "bytes": 1590,
+      "sha256": "d53c09619361caae8c30d6dfb6afe6654985f2e1c118055d10f01ce5d8a1c3a9"
+    },
+    {
+      "path": "docs/WEB-002-REVIEW.md",
+      "bytes": 4317,
+      "sha256": "6fc31489fd0ec90d79b988cef907e36d75a7d6590a98085b423e366865a72fbc"
+    },
+    {
+      "path": "docs/WEB-003-ACCESSIBILITY.md",
+      "bytes": 14855,
+      "sha256": "4218ce2563794054c66c326f3c2c8e763333ee31eea933203dd26377b1cc7865"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 184672,
+      "sha256": "f68645f81925f86a370c157b961149c034bfd21c60197a8395eb3b7b544cd54c"
+    },
+    {
+      "path": "package.json",
+      "bytes": 932,
+      "sha256": "265be86ca7113fd4f9abd3a71bb17b452caaa6ef258d0718756bca8f4547e3c2"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 1254,
+      "sha256": "6a7bde65f9bd0ec9d9c83045ea517825e7afc0adc13ebf4cd4dbf30b3ed1add0"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 245,
+      "sha256": "65923f77d045100b3dcaa32ad2dc699590119a27f8b8ba1564234fd02c056d3b"
+    },
+    {
+      "path": "public/robots.txt",
+      "bytes": 26,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    {
+      "path": "scripts/validate-content.ts",
+      "bytes": 650,
+      "sha256": "7385d82d3e3acb8aac4d74f2fb40a3ad9657a93e77106f8ec0334f0dba5ceb7d"
+    },
+    {
+      "path": "scripts/validate-import.ts",
+      "bytes": 1523,
+      "sha256": "316fd32b9c38535a7b1e7ebc709b7e2644f163c83c84383b98fb32426af3811c"
+    },
+    {
+      "path": "src/components/ArticleCard.astro",
+      "bytes": 1251,
+      "sha256": "2359ca302674d0f2d52f92c0fba04e191b468afb428c1a2953989efcd85d8d77"
+    },
+    {
+      "path": "src/components/AtlasPage.astro",
+      "bytes": 1943,
+      "sha256": "8ca64c3660d25077bdfc9aa3a0a5fc195e784bc30f3591ba6abbf16b2d66556c"
+    },
+    {
+      "path": "src/components/DemoNotice.astro",
+      "bytes": 358,
+      "sha256": "0eb8f5c24af11459c1dd4c5c40895aa4c2e46473c7b41c7fb7575353d783f093"
+    },
+    {
+      "path": "src/components/Icon.astro",
+      "bytes": 963,
+      "sha256": "da9ab50f4b90943a77811d6ca8ecf0809ce77ab1dc0f095565d40c9b7eb226a3"
+    },
+    {
+      "path": "src/components/SearchPanel.astro",
+      "bytes": 3028,
+      "sha256": "cb4c8ba3e3bd85082589acfa190dc6889e0e6c8456e6e832ac0ae36247e1e9f0"
+    },
+    {
+      "path": "src/components/Terrain.astro",
+      "bytes": 3532,
+      "sha256": "0b1f812de51ff50655b9ebae206c27d875e7dbc5b19996a7bcf340c98ae9872c"
+    },
+    {
+      "path": "src/components/content/EvidenceLabel.astro",
+      "bytes": 487,
+      "sha256": "c0622c83abf39e224cc036aa7343e5da9a4467663c02e69769c8473467108d50"
+    },
+    {
+      "path": "src/components/content/GameVersionPanel.astro",
+      "bytes": 710,
+      "sha256": "12ecbc65247e30c1579a7fd3854dc48c54f00a065e465d66dfade325f6630bfc"
+    },
+    {
+      "path": "src/components/content/TopicIndex.astro",
+      "bytes": 520,
+      "sha256": "ff03d8922cf7e4fac18cf9d08dfc27e3f943526cf102b55cadbfe45088df706f"
+    },
+    {
+      "path": "src/components/navigation/GlobalHeader.astro",
+      "bytes": 3316,
+      "sha256": "bbb32613a393074f0828ff0da14c59a4d9a5624d386cfbd9a6401209cd0af34c"
+    },
+    {
+      "path": "src/components/reader/ArticleOutline.astro",
+      "bytes": 570,
+      "sha256": "e95e72842d0e305c7d78a26b40f8e8cb02a23e675b39379ef76d448564247993"
+    },
+    {
+      "path": "src/components/reader/ArticleReader.astro",
+      "bytes": 2220,
+      "sha256": "eb181bb89751fc46e02f3984c4d47ab6bd12f34df27fe61fedb49b1c141c8afa"
+    },
+    {
+      "path": "src/components/reader/CrossReferencePanel.astro",
+      "bytes": 727,
+      "sha256": "436712289c5b7cdc689b7a3c7b694e88cbee1748193c7c6f9a6598867fd9e3d6"
+    },
+    {
+      "path": "src/components/reader/QuickFieldCard.astro",
+      "bytes": 1314,
+      "sha256": "d1c7c48d00f0a398fab96f01a441e23ced9afa7c1019e2b1111d39f8157ae141"
+    },
+    {
+      "path": "src/components/reader/ReadingPreferences.astro",
+      "bytes": 1454,
+      "sha256": "37db44dff6de8eb1076ed532f88074da72d48a8b2b700f10b684be796518b07f"
+    },
+    {
+      "path": "src/data/catalog.ts",
+      "bytes": 5659,
+      "sha256": "05f1f74c6be0d0d7da67407e1af112b8dfd6c6f75f0e6c53a57d980175f48ed9"
+    },
+    {
+      "path": "src/data/demo.ts",
+      "bytes": 2666,
+      "sha256": "d561cb102ee8a1891b0f211f460c4c329077c0483fad0f910547af784d17e6ee"
+    },
+    {
+      "path": "src/layouts/Layout.astro",
+      "bytes": 1893,
+      "sha256": "25671749c574997d211ebfa79d754698f07f4dde92a2983febf7105bfeb61b3b"
+    },
+    {
+      "path": "src/lib/content.ts",
+      "bytes": 13421,
+      "sha256": "e799ab9765ad404e8bc90fb126f50a57a1a0021cb576a2bcb925d5d57b6c3a88"
+    },
+    {
+      "path": "src/lib/prototype.ts",
+      "bytes": 2886,
+      "sha256": "f0928322acb1af5e0a6d3c2f82b7b52eb5339cc7f48b32bb0f84ac34c46a57c4"
+    },
+    {
+      "path": "src/lib/search.ts",
+      "bytes": 1076,
+      "sha256": "08e6c6531b6c1bfd83ca9f4d8747b8eab46a41306a645947bd98b90968441a5d"
+    },
+    {
+      "path": "src/pages/404.astro",
+      "bytes": 393,
+      "sha256": "dc59f87ec04e4c40152d5f5d21b55c7717b8f05d025e7baa0b98baac52093017"
+    },
+    {
+      "path": "src/pages/acerca/index.astro",
+      "bytes": 2528,
+      "sha256": "e8d358fbf24c41df0b26fc44530d8974c36932c35572654b97cd7c9e19369ebb"
+    },
+    {
+      "path": "src/pages/aprender/index.astro",
+      "bytes": 1290,
+      "sha256": "231fd14c44065a30ea613cb12458f84ccf6c73dcf8bcb5b36b134ed7b8a51c4c"
+    },
+    {
+      "path": "src/pages/atlas/chernarus/index.astro",
+      "bytes": 114,
+      "sha256": "a863ba48f668715f4b49bb93506937b659043f6b6ddb4e3a0e1b62d4e632d308"
+    },
+    {
+      "path": "src/pages/atlas/index.astro",
+      "bytes": 1458,
+      "sha256": "243636b4c56db2d8184809cd562b6c91031ebf5e3f4650a01e21a0e59650db03"
+    },
+    {
+      "path": "src/pages/atlas/livonia/index.astro",
+      "bytes": 107,
+      "sha256": "58f3dc6e0d46a2d40a70575e240202f61c81ffd145a0d4a697bb2c6f5d4f8f69"
+    },
+    {
+      "path": "src/pages/buscar/index.astro",
+      "bytes": 672,
+      "sha256": "f3b6c5d766332c79a490dc5e4b759153d93e048f3ac4768ac662bba9b4e421b2"
+    },
+    {
+      "path": "src/pages/fichas/[slug].astro",
+      "bytes": 1248,
+      "sha256": "dfcd15b5928871b52b91bd988dc41d4e432a7d5ebf17fc66bb294fb0e822c5dc"
+    },
+    {
+      "path": "src/pages/fichas/index.astro",
+      "bytes": 1128,
+      "sha256": "cfa9954e2ff84075cfae9a060226cc19f3887bc2c2ef01b14dbab7283ecf3faf"
+    },
+    {
+      "path": "src/pages/fuentes/index.astro",
+      "bytes": 3279,
+      "sha256": "424d5ece080d29995ddded19b79c9241f6e5c19629be34f8e907a5d6c42fd324"
+    },
+    {
+      "path": "src/pages/herramientas/index.astro",
+      "bytes": 1908,
+      "sha256": "566391210f3c3231b33da21f5c5fe591df479fd9b182993ff09c08a35ecdca0e"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "bytes": 3709,
+      "sha256": "3b834f1f4613d395b0428e605601178e463b810c3d105dca59f3ca204a5952d4"
+    },
+    {
+      "path": "src/pages/manual/[slug].astro",
+      "bytes": 399,
+      "sha256": "5215fdd61ea7c5d2ecb796c1516c05b6b63a24b85f806aaaaa44afb93e829f83"
+    },
+    {
+      "path": "src/pages/manual/index.astro",
+      "bytes": 1272,
+      "sha256": "1fad811f21621728e007861cb76f03734042ffba189dfedd7957c670f12b8f58"
+    },
+    {
+      "path": "src/pages/manual/leer-una-ficha.astro",
+      "bytes": 166,
+      "sha256": "5c30b8f852f9a354e251d89ad9ef0f34fc1919ede529122e3490f3a6040b2f96"
+    },
+    {
+      "path": "src/scripts/search.ts",
+      "bytes": 4460,
+      "sha256": "f958d816d331095e2bd3299da8ad3727c9cf8fa7416d72802f107ec73eba5e53"
+    },
+    {
+      "path": "src/styles/accessibility.css",
+      "bytes": 5073,
+      "sha256": "ea25cfff23c74514f21ede6817a51766dcfc33d54569ea4aa2c73d153e7b2163"
+    },
+    {
+      "path": "src/styles/global.css",
+      "bytes": 22777,
+      "sha256": "ba8ae2243eb2c9bb72500393e9366704e05c6696821f6dd940512bad6b671828"
+    },
+    {
+      "path": "src/styles/prototype.css",
+      "bytes": 6542,
+      "sha256": "9875dc51b9e3b8f427f66f67314cd2397490d58554bdea380ce91d4047ea6bf6"
+    },
+    {
+      "path": "tests/e2e/accessibility.spec.ts",
+      "bytes": 5346,
+      "sha256": "48ac04f32cbbfaa70c7601117ce3423d1473edb970dc0778029d22c61c513055"
+    },
+    {
+      "path": "tests/e2e/prototype.spec.ts",
+      "bytes": 7726,
+      "sha256": "bf92fa4571189095aee8afec4d305d1bdb61b045377d478131c23ba99f42b830"
+    },
+    {
+      "path": "tests/e2e/reader.spec.ts",
+      "bytes": 7011,
+      "sha256": "95dbf5809f0e45f08b4c11cea5cc972fa16887c0d9dbc1b914a3bbec77ec7d17"
+    },
+    {
+      "path": "tests/e2e/zoom.spec.ts",
+      "bytes": 10066,
+      "sha256": "3d83bd752b457e5255b5cbb26bb8dff987df691290fd0c0e4f78c5949161dbac"
+    },
+    {
+      "path": "tests/fixtures/zoom-extension/background.js",
+      "bytes": 121,
+      "sha256": "29d671568b5717a34487b77eec5af30710a9ab590b8caaeaf6eefe7ea627819d"
+    },
+    {
+      "path": "tests/fixtures/zoom-extension/manifest.json",
+      "bytes": 317,
+      "sha256": "839ee34febc9cc5e0c055e9977b95e5fd3245fbf47d0f5decc43dac1a6fda7d2"
+    },
+    {
+      "path": "tests/unit/content.test.ts",
+      "bytes": 11538,
+      "sha256": "801b3baa74f056aab3b955633ed5599ad03826f55618b6559dd43ac9cab11733"
+    },
+    {
+      "path": "tests/unit/import-cli.test.ts",
+      "bytes": 4600,
+      "sha256": "313899f3ac18cef6f954cc2be7f65ac7f21abec1f94c9726635e8f40a7f2d244"
+    },
+    {
+      "path": "tests/unit/prototype.test.ts",
+      "bytes": 2382,
+      "sha256": "69c8ce54f76899b43dadc3ac1d14441776687906fe92edf5ffac65370b8d29b5"
+    },
+    {
+      "path": "tests/unit/search.test.ts",
+      "bytes": 1528,
+      "sha256": "d8c5aab7728e84958ca331c92f94f07c3d784cb2bef68158310f233c5e90dc79"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 213,
+      "sha256": "b80b07c5e25d5fdd6f223dbc168b20f0631b2f6ace4ca178c134a88ebee0e43b"
+    }
+  ],
+  "WEB004": {
+    "bytes": 43999242,
+    "sha256": "fbc5dde13575856ae144df8cda4b3e36d95b567cea2eb248967a167e4290ec60",
+    "unchanged": true
+  },
+  "original_editorial_files_accessed": 0,
+  "editorial_hashes_claimed": false,
+  "editorial_reference": {
+    "source": "Owner-provided, no originals inspected",
+    "version": "v0.16.1",
+    "approved_articles": 84,
+    "historical_ids": 294,
+    "historical_packages": 42,
+    "derived_matrices_not_slots": 4,
+    "livonia_separate": true
+  },
+  "scope": "Hash inventory of the 83 tracked prototype files, NOT of private original manuscripts."
+}
