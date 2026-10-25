@@ -1,0 +1,10 @@
+---
+// DEMO-only contract: cannot render verified or editorially approved labels by inference.
+interface Props { compact?: boolean }
+const { compact = false } = Astro.props;
+---
+<dl class:list={['evidence-labels', { compact }]}>
+  <div><dt>Editorial</dt><dd>DEMO · sin aprobación editorial real</dd></div>
+  <div><dt>Evidencia técnica</dt><dd>Pendiente de verificación</dd></div>
+  <div><dt>Publicación</dt><dd>Solo prototipo DEMO · no autorizada para producción</dd></div>
+</dl>

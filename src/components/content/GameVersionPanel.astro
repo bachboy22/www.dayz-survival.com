@@ -1,0 +1,9 @@
+---
+interface Props { contentId: string }
+const { contentId } = Astro.props;
+---
+<aside class="version-panel" aria-label="Alcance técnico de este ejemplo">
+  <h2 id="version" tabindex="-1">Versión y procedencia</h2>
+  <dl><div><dt>Registro</dt><dd>{contentId} · sintético</dd></div><div><dt>Build evaluada</dt><dd>Ninguna</dd></div><div><dt>Alcance</dt><dd>Interfaz de lectura; no describe mecánicas de DayZ</dd></div><div><dt>Fuente y fecha técnica</dt><dd>No aplican: no se ha realizado una comprobación del juego</dd></div></dl>
+  <p>Sin certificación para PC Stable 1.30.164078. La aprobación editorial, la evidencia por versión y el permiso de publicación se revisan por separado.</p>
+</aside>

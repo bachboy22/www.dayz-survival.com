@@ -1,0 +1,13 @@
+---
+import type { PrototypeArticle } from '../../data/catalog';
+interface Props { article: PrototypeArticle; standalone?: boolean }
+const { article, standalone = false } = Astro.props;
+---
+<section class="quick-sheet" aria-labelledby="ficha-rapida">
+  <span class="reader-label">FIELD CARD / DEMO · lectura breve de interfaz</span><h2 id="ficha-rapida" tabindex="-1">{article.quickCard.title}</h2>
+  <p class="card-time">Objetivo de consulta: 20–40 s · estimación de diseño, no medición</p>
+  <dl class="field-decisions"><div><dt>Situación</dt><dd>{article.fieldCard.situation}</dd></div><div><dt>Decisión inmediata</dt><dd>{article.fieldCard.decision}</dd></div><div><dt>Error a evitar</dt><dd>{article.fieldCard.avoid}</dd></div><div><dt>Dos señales</dt><dd><ul>{article.fieldCard.signals.map(signal => <li>{signal}</li>)}</ul></dd></div><div><dt>Salida</dt><dd>{article.fieldCard.exit}</dd></div></dl>
+  <ul class="field-checklist">{article.quickCard.items.map(item => <li>{item}</li>)}</ul>
+  <p><a href={standalone ? `/manual/${article.slug}/` : `/fichas/${article.slug}/`}>{standalone ? 'Leer el artículo completo →' : 'Ver esta ficha por separado →'}</a></p>
+  <p class="demo-source">Fuente extensa: {article.id}, texto sintético de interfaz; no procede de la Fuente Maestra.</p>
+</section>

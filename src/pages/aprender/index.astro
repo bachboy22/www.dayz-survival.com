@@ -1,0 +1,6 @@
+---
+import Layout from '../../layouts/Layout.astro';
+import DemoNotice from '../../components/DemoNotice.astro';
+import { catalog } from '../../data/catalog';
+---
+<Layout title="Aprender"><div class="container"><header class="page-intro"><span class="eyebrow">RUTAS OPCIONALES / DEMO</span><h1>Un punto de partida.</h1><p>Recorridos por la interfaz para recién llegados y lectores habituales. No son cursos de supervivencia ni alteran el corpus editorial.</p><DemoNotice/></header><div class="page-content learning-grid"><section class="info-card" aria-labelledby="first-route"><span class="eyebrow">PRIMERA VISITA</span><h2 id="first-route">Conoce el lector</h2><ol class="learning-steps">{catalog.map(article => <li><a class="body-link" href={`/manual/${article.slug}/`}>{article.title} · {article.id}</a></li>)}</ol></section><section class="info-card" aria-labelledby="return-route"><span class="eyebrow">CONSULTA HABITUAL</span><h2 id="return-route">Ve al punto</h2><ul class="learning-steps"><li><a class="body-link" href="/fichas/">Abrir las fichas rápidas DEMO</a></li><li><a class="body-link" href="/buscar/?tag=Procedencia">Filtrar ejemplos por procedencia</a></li><li><a class="body-link" href="/atlas/">Elegir un ámbito de atlas</a></li></ul></section></div></div></Layout>

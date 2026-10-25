@@ -7,8 +7,8 @@ import { fileURLToPath } from 'node:url';
 
 const origin = 'http://127.0.0.1:4321';
 const directory = path.resolve('artifacts/zoom');
-const routes = ['/', '/manual/', '/manual/leer-una-ficha/', '/fichas/', '/buscar/', '/atlas/chernarus/', '/atlas/livonia/', '/fuentes/', '/acerca/'];
-const labels: Record<string, string> = { '/': 'home', '/manual/leer-una-ficha/': 'reader', '/buscar/': 'search' };
+const routes = ['/', '/manual/', '/manual/leer-una-ficha/', '/fichas/', '/buscar/', '/atlas/chernarus/', '/atlas/livonia/', '/fuentes/', '/acerca/', '/aprender/', '/herramientas/', '/atlas/', '/manual/distinguir-los-estados/', '/manual/explorar-un-atlas-pendiente/', '/fichas/leer-una-ficha/', '/fichas/distinguir-los-estados/', '/fichas/explorar-un-atlas-pendiente/'];
+const labels: Record<string, string> = { '/': 'home', '/manual/leer-una-ficha/': 'reader', '/buscar/': 'search', '/atlas/': 'atlas', '/aprender/': 'learn' };
 
 async function measure(page: Page) {
   return page.evaluate(() => ({
@@ -56,8 +56,8 @@ async function exerciseReader(page: Page) {
 }
 
 for (const factor of [2, 4]) {
-  test(`desktop browser zoom ${factor * 100}%: nine routes, keyboard, reader and search`, async ({}, testInfo) => {
-    test.setTimeout(90_000);
+  test(`desktop browser zoom ${factor * 100}%: all prototype routes, keyboard, reader and search`, async ({}, testInfo) => {
+    test.setTimeout(150_000);
     await mkdir(directory, { recursive: true });
     const profile = await mkdtemp(path.join(tmpdir(), 'dayz-browser-zoom-'));
     const extension = fileURLToPath(new URL('../fixtures/zoom-extension/', import.meta.url));
@@ -94,6 +94,11 @@ for (const factor of [2, 4]) {
           state = 'A+ maximum (135% relative text)';
         }
         if (route === '/buscar/') {
+          await page.getByRole('searchbox').fill('interfaz');
+          await expect(page.locator('[data-search-result]:visible')).toHaveCount(3);
+          await page.getByLabel('Ámbito de prueba', { exact: true }).selectOption('livonia');
+          await expect(page.locator('[data-search-result]:visible')).toHaveCount(1);
+          await page.getByLabel('Ámbito de prueba', { exact: true }).selectOption('');
           await page.getByRole('searchbox').fill('sin-coincidencias');
           await expect(page.locator('#search-status')).toContainText('0 resultados');
           state = 'empty results, search focused';
@@ -131,7 +136,7 @@ for (const factor of [2, 4]) {
   });
 
   test(`mobile pinch emulation ${factor * 100}%: distinct visual and layout viewports`, async ({}, testInfo) => {
-    test.setTimeout(60_000);
+    test.setTimeout(120_000);
     await mkdir(directory, { recursive: true });
     const browser = await chromium.launch();
     const context = await browser.newContext({ ...devices['Pixel 7'], deviceScaleFactor: 1, reducedMotion: 'reduce' });

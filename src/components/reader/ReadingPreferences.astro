@@ -1,0 +1,18 @@
+<div class="reader-tools"><span class="reader-label">CUADERNO DE DEMOSTRACIÓN</span><div class="size-controls"><span class="tool-label">TEXTO</span><button type="button" id="text-smaller" aria-controls="reader-content" aria-disabled="true" aria-label="Reducir tamaño del texto">A−</button><button type="button" id="text-larger" aria-controls="reader-content" aria-disabled="false" aria-label="Aumentar tamaño del texto">A+</button></div></div>
+<p class="sr-only" id="text-size-status" role="status" aria-live="polite" aria-atomic="true"></p>
+<script>
+const reader = document.querySelector<HTMLElement>('.reader');
+const less = document.querySelector<HTMLButtonElement>('#text-smaller');
+const more = document.querySelector<HTMLButtonElement>('#text-larger');
+const status = document.querySelector<HTMLElement>('#text-size-status');
+let level = 0;
+function resize(announce = true) {
+  if (!reader || !less || !more) return;
+  reader.style.setProperty('--reader-size', `${1.02 + level * .12}rem`);
+  less.setAttribute('aria-disabled', String(level === 0)); more.setAttribute('aria-disabled', String(level === 3));
+  if (announce && status) status.textContent = `Tamaño del texto: ${Math.round((1.02 + level * .12) / 1.02 * 100)} %. Nivel ${level + 1} de 4.`;
+}
+less?.addEventListener('click', () => { if (level > 0) { level--; resize(); } });
+more?.addEventListener('click', () => { if (level < 3) { level++; resize(); } });
+resize(false);
+</script>

@@ -1,0 +1,8 @@
+---
+import ArticleReader from '../../components/reader/ArticleReader.astro';
+import { catalog, type PrototypeArticle } from '../../data/catalog';
+export function getStaticPaths() { return catalog.slice(1).map(article => ({ params: { slug: article.slug }, props: { article } })); }
+interface Props { article: PrototypeArticle }
+const { article } = Astro.props;
+---
+<ArticleReader article={article}/>
