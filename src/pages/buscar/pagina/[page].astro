@@ -1,0 +1,11 @@
+---
+import Layout from '../../../layouts/Layout.astro';
+import DemoNotice from '../../../components/DemoNotice.astro';
+import SearchPanel from '../../../components/SearchPanel.astro';
+import { catalog } from '../../../data/catalog';
+import { SEARCH_PAGE_SIZE } from '../../../lib/search-index';
+export function getStaticPaths() { return Array.from({ length: Math.max(0, Math.ceil(catalog.length / SEARCH_PAGE_SIZE) - 1) }, (_, i) => ({ params: { page: String(i + 2) }, props: { page: i + 2 } })); }
+interface Props { page: number }
+const { page } = Astro.props;
+---
+<Layout title={`Buscar · listado DEMO ${page}`} description={`Página ${page} del listado estático de ejemplos DEMO. Sin JavaScript permite recorrer la colección, sin aplicar búsqueda ni filtros.`}><div class="container"><header class="page-intro"><a class="text-link" href="/buscar/">Volver al buscador →</a><h1>Listado DEMO · página {page}.</h1><p>Ejemplos sintéticos de interfaz; ningún manuscrito aprobado.</p><DemoNotice compact/></header><div class="page-content"><SearchPanel page={page}/></div></div></Layout>

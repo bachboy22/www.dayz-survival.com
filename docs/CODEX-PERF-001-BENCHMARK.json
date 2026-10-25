@@ -1,0 +1,1307 @@
+{
+  "baseline": "6091b56667b9042c3da72e42fd1dc7e206b56b8f",
+  "configuration": {
+    "counts": [
+      3,
+      100,
+      500,
+      900
+    ],
+    "cpuRates": [
+      1,
+      4
+    ],
+    "viewport": {
+      "width": 1280,
+      "height": 900
+    },
+    "queries": 4,
+    "repetitionsPerQuery": 5,
+    "resourceCache": "no-store",
+    "network": "loopback without network throttling",
+    "fixtureParagraphs": 6,
+    "fixtureRepeatedSentenceCopies": 4,
+    "quantile": "nearest-rank; 20 samples per cell; not field INP"
+  },
+  "machine": {
+    "release": "6.18.55",
+    "arch": "x64",
+    "reportedCpu": "INTEL(R) XEON(R) PLATINUM 8573C",
+    "availableParallelism": 2,
+    "dedicatedLab": false
+  },
+  "completedAt": "2026-10-25T11:20:51.224Z",
+  "node": "v24.19.0",
+  "browser": "156.0.8078.4",
+  "candidateSources": [
+    {
+      "path": "astro.config.mjs",
+      "sha256": "83416be3934a3e8e5c9e000cbe95053aef15256e127289baafcc5d0cf9519a17"
+    },
+    {
+      "path": "package-lock.json",
+      "sha256": "f68645f81925f86a370c157b961149c034bfd21c60197a8395eb3b7b544cd54c"
+    },
+    {
+      "path": "package.json",
+      "sha256": "265be86ca7113fd4f9abd3a71bb17b452caaa6ef258d0718756bca8f4547e3c2"
+    },
+    {
+      "path": "src/components/ArticleCard.astro",
+      "sha256": "2359ca302674d0f2d52f92c0fba04e191b468afb428c1a2953989efcd85d8d77"
+    },
+    {
+      "path": "src/components/AtlasPage.astro",
+      "sha256": "8ca64c3660d25077bdfc9aa3a0a5fc195e784bc30f3591ba6abbf16b2d66556c"
+    },
+    {
+      "path": "src/components/DemoNotice.astro",
+      "sha256": "0eb8f5c24af11459c1dd4c5c40895aa4c2e46473c7b41c7fb7575353d783f093"
+    },
+    {
+      "path": "src/components/Icon.astro",
+      "sha256": "da9ab50f4b90943a77811d6ca8ecf0809ce77ab1dc0f095565d40c9b7eb226a3"
+    },
+    {
+      "path": "src/components/SearchCardTemplate.astro",
+      "sha256": "d2bc00ad07ce5a6ae6b19be9f10c95c8592006936947ea8968613591869a87c0"
+    },
+    {
+      "path": "src/components/SearchPanel.astro",
+      "sha256": "8e8b928cd59bafc046c92b16d0a69f84a9b8ef80e756aee1dc3acac86ed3b875"
+    },
+    {
+      "path": "src/components/Terrain.astro",
+      "sha256": "0b1f812de51ff50655b9ebae206c27d875e7dbc5b19996a7bcf340c98ae9872c"
+    },
+    {
+      "path": "src/components/content/EvidenceLabel.astro",
+      "sha256": "c0622c83abf39e224cc036aa7343e5da9a4467663c02e69769c8473467108d50"
+    },
+    {
+      "path": "src/components/content/GameVersionPanel.astro",
+      "sha256": "12ecbc65247e30c1579a7fd3854dc48c54f00a065e465d66dfade325f6630bfc"
+    },
+    {
+      "path": "src/components/content/TopicIndex.astro",
+      "sha256": "ff03d8922cf7e4fac18cf9d08dfc27e3f943526cf102b55cadbfe45088df706f"
+    },
+    {
+      "path": "src/components/navigation/GlobalHeader.astro",
+      "sha256": "bbb32613a393074f0828ff0da14c59a4d9a5624d386cfbd9a6401209cd0af34c"
+    },
+    {
+      "path": "src/components/reader/ArticleOutline.astro",
+      "sha256": "e95e72842d0e305c7d78a26b40f8e8cb02a23e675b39379ef76d448564247993"
+    },
+    {
+      "path": "src/components/reader/ArticleReader.astro",
+      "sha256": "fc8b6b0871faa081da9106b9cac07fae04a2261c0dde3c0f07ba57a9deca347f"
+    },
+    {
+      "path": "src/components/reader/CrossReferencePanel.astro",
+      "sha256": "436712289c5b7cdc689b7a3c7b694e88cbee1748193c7c6f9a6598867fd9e3d6"
+    },
+    {
+      "path": "src/components/reader/QuickFieldCard.astro",
+      "sha256": "d1c7c48d00f0a398fab96f01a441e23ced9afa7c1019e2b1111d39f8157ae141"
+    },
+    {
+      "path": "src/components/reader/ReadingPreferences.astro",
+      "sha256": "37db44dff6de8eb1076ed532f88074da72d48a8b2b700f10b684be796518b07f"
+    },
+    {
+      "path": "src/data/catalog.ts",
+      "sha256": "05f1f74c6be0d0d7da67407e1af112b8dfd6c6f75f0e6c53a57d980175f48ed9"
+    },
+    {
+      "path": "src/data/demo.ts",
+      "sha256": "d561cb102ee8a1891b0f211f460c4c329077c0483fad0f910547af784d17e6ee"
+    },
+    {
+      "path": "src/layouts/Layout.astro",
+      "sha256": "13838098eb7d956be59d4fa42324e584d3374f96869cb79f8e4d12890202634f"
+    },
+    {
+      "path": "src/lib/content.ts",
+      "sha256": "e799ab9765ad404e8bc90fb126f50a57a1a0021cb576a2bcb925d5d57b6c3a88"
+    },
+    {
+      "path": "src/lib/page-metadata.ts",
+      "sha256": "26aa117504b670e1b00fc6f1bf1d6475be8f399ec7d4f7d744b54ad926643520"
+    },
+    {
+      "path": "src/lib/prototype.ts",
+      "sha256": "f0928322acb1af5e0a6d3c2f82b7b52eb5339cc7f48b32bb0f84ac34c46a57c4"
+    },
+    {
+      "path": "src/lib/search-index.ts",
+      "sha256": "e67ae77bb6c9b8bfdadc74b16664fde52799b2e753d4144bf014254048fd5060"
+    },
+    {
+      "path": "src/lib/search.ts",
+      "sha256": "08e6c6531b6c1bfd83ca9f4d8747b8eab46a41306a645947bd98b90968441a5d"
+    },
+    {
+      "path": "src/pages/404.astro",
+      "sha256": "dc59f87ec04e4c40152d5f5d21b55c7717b8f05d025e7baa0b98baac52093017"
+    },
+    {
+      "path": "src/pages/acerca/index.astro",
+      "sha256": "e8d358fbf24c41df0b26fc44530d8974c36932c35572654b97cd7c9e19369ebb"
+    },
+    {
+      "path": "src/pages/aprender/index.astro",
+      "sha256": "231fd14c44065a30ea613cb12458f84ccf6c73dcf8bcb5b36b134ed7b8a51c4c"
+    },
+    {
+      "path": "src/pages/atlas/chernarus/index.astro",
+      "sha256": "a863ba48f668715f4b49bb93506937b659043f6b6ddb4e3a0e1b62d4e632d308"
+    },
+    {
+      "path": "src/pages/atlas/index.astro",
+      "sha256": "243636b4c56db2d8184809cd562b6c91031ebf5e3f4650a01e21a0e59650db03"
+    },
+    {
+      "path": "src/pages/atlas/livonia/index.astro",
+      "sha256": "58f3dc6e0d46a2d40a70575e240202f61c81ffd145a0d4a697bb2c6f5d4f8f69"
+    },
+    {
+      "path": "src/pages/buscar/index.astro",
+      "sha256": "f3b6c5d766332c79a490dc5e4b759153d93e048f3ac4768ac662bba9b4e421b2"
+    },
+    {
+      "path": "src/pages/buscar/pagina/[page].astro",
+      "sha256": "7fad7fc9d8f801ac569fa39b37dcd4a981f2c9b75778f3e73cbf5b21daa30e2b"
+    },
+    {
+      "path": "src/pages/fichas/[slug].astro",
+      "sha256": "9d45d90cb9d88fb1c2e9af9c5ec3c5f399578c5597a2e07036af6904cfd6fd0a"
+    },
+    {
+      "path": "src/pages/fichas/index.astro",
+      "sha256": "cfa9954e2ff84075cfae9a060226cc19f3887bc2c2ef01b14dbab7283ecf3faf"
+    },
+    {
+      "path": "src/pages/fuentes/index.astro",
+      "sha256": "6f8c678882980ec099d17e322bac377440a807c264b5ed72da77e680df1a8eaa"
+    },
+    {
+      "path": "src/pages/herramientas/index.astro",
+      "sha256": "566391210f3c3231b33da21f5c5fe591df479fd9b182993ff09c08a35ecdca0e"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "sha256": "3b834f1f4613d395b0428e605601178e463b810c3d105dca59f3ca204a5952d4"
+    },
+    {
+      "path": "src/pages/manual/[slug].astro",
+      "sha256": "5215fdd61ea7c5d2ecb796c1516c05b6b63a24b85f806aaaaa44afb93e829f83"
+    },
+    {
+      "path": "src/pages/manual/index.astro",
+      "sha256": "1fad811f21621728e007861cb76f03734042ffba189dfedd7957c670f12b8f58"
+    },
+    {
+      "path": "src/pages/manual/leer-una-ficha.astro",
+      "sha256": "5c30b8f852f9a354e251d89ad9ef0f34fc1919ede529122e3490f3a6040b2f96"
+    },
+    {
+      "path": "src/pages/search-index.json.ts",
+      "sha256": "95040c93ab900c400d6ec4d45330e763d44c9831d43cde86ba699d2003158774"
+    },
+    {
+      "path": "src/scripts/search.ts",
+      "sha256": "7539b1da254cfd8e79dcb4d31856b88135841c5ee56c557ec689917c2faf0c5f"
+    },
+    {
+      "path": "src/styles/accessibility.css",
+      "sha256": "ea25cfff23c74514f21ede6817a51766dcfc33d54569ea4aa2c73d153e7b2163"
+    },
+    {
+      "path": "src/styles/global.css",
+      "sha256": "ba8ae2243eb2c9bb72500393e9366704e05c6696821f6dd940512bad6b671828"
+    },
+    {
+      "path": "src/styles/prototype.css",
+      "sha256": "1b61b8bc4e179c576ad2db5c158bbab3a98330b886dada00da75af520771a4db"
+    }
+  ],
+  "records": [
+    {
+      "variant": "baseline",
+      "count": 3,
+      "cpuThrottle": 1,
+      "buildMs": 6126.96634,
+      "searchHtmlBytes": 11625,
+      "initialVisible": 3,
+      "decodedScriptBytes": 9502,
+      "transferredScriptBytes": 9802,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 0.6779380501923992,
+      "p25SyncHandlerMs": 0.3999999910593033,
+      "p75SyncHandlerMs": 0.5,
+      "p50SyncHandlerMs": 0.4000000059604645,
+      "minSyncHandlerMs": 0.29999999701976776,
+      "maxSyncHandlerMs": 3.5,
+      "p50InputToFrameMs": 31.5,
+      "p95SyncHandlerMs": 1,
+      "p95InputToFrameMs": 32,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 0.5999999940395355,
+          "p95SyncMs": 1,
+          "p50FrameMs": 29.399999991059303,
+          "p95FrameMs": 31.700000002980232
+        },
+        {
+          "query": "cuaderno",
+          "samples": 5,
+          "p50SyncMs": 0.4000000059604645,
+          "p95SyncMs": 3.5,
+          "p50FrameMs": 31.80000001192093,
+          "p95FrameMs": 32
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 0.5,
+          "p50FrameMs": 31.799999997019768,
+          "p95FrameMs": 32
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 0.4000000059604645,
+          "p95SyncMs": 0.5,
+          "p50FrameMs": 31.400000005960464,
+          "p95FrameMs": 32.20000000298023
+        }
+      ],
+      "filterVisible": 1,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 191,
+      "domContentLoadedMs": 47.70000000298023,
+      "loadEventMs": 70.59999999403954,
+      "longTasks": []
+    },
+    {
+      "variant": "baseline",
+      "count": 3,
+      "cpuThrottle": 4,
+      "buildMs": 6126.96634,
+      "searchHtmlBytes": 11625,
+      "initialVisible": 3,
+      "decodedScriptBytes": 9502,
+      "transferredScriptBytes": 9802,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 1.7619520421131158,
+      "p25SyncHandlerMs": 2.199999988079071,
+      "p75SyncHandlerMs": 3.5,
+      "p50SyncHandlerMs": 2.7000000029802322,
+      "minSyncHandlerMs": 0.4000000059604645,
+      "maxSyncHandlerMs": 7.799999997019768,
+      "p50InputToFrameMs": 27.900000005960464,
+      "p95SyncHandlerMs": 6.799999997019768,
+      "p95InputToFrameMs": 32.20000000298023,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 3,
+          "p95SyncMs": 5.700000002980232,
+          "p50FrameMs": 27.900000005960464,
+          "p95FrameMs": 32.20000000298023
+        },
+        {
+          "query": "cuaderno",
+          "samples": 5,
+          "p50SyncMs": 2.2999999970197678,
+          "p95SyncMs": 7.799999997019768,
+          "p50FrameMs": 27.700000002980232,
+          "p95FrameMs": 29.5
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 2.7999999970197678,
+          "p95SyncMs": 3.699999988079071,
+          "p50FrameMs": 30.700000002980232,
+          "p95FrameMs": 31.5
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 2.199999988079071,
+          "p95SyncMs": 5,
+          "p50FrameMs": 29.900000005960464,
+          "p95FrameMs": 34.69999998807907
+        }
+      ],
+      "filterVisible": 1,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 191,
+      "domContentLoadedMs": 88.29999999701977,
+      "loadEventMs": 169.09999999403954,
+      "longTasks": [
+        {
+          "start": 77.09999999403954,
+          "duration": 92
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "count": 3,
+      "cpuThrottle": 1,
+      "buildMs": 5840.437408,
+      "searchHtmlBytes": 13353,
+      "initialVisible": 3,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 4179,
+      "transferredIndexBytes": 4479,
+      "stdSyncHandlerMs": 0.26320144613720753,
+      "p25SyncHandlerMs": 0.20000000298023224,
+      "p75SyncHandlerMs": 0.4000000059604645,
+      "p50SyncHandlerMs": 0.20000000298023224,
+      "minSyncHandlerMs": 0.09999999403953552,
+      "maxSyncHandlerMs": 1.1000000089406967,
+      "p50InputToFrameMs": 29.299999997019768,
+      "p95SyncHandlerMs": 0.8999999910593033,
+      "p95InputToFrameMs": 30.399999991059303,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 0.8999999910593033,
+          "p50FrameMs": 29.200000002980232,
+          "p95FrameMs": 29.799999997019768
+        },
+        {
+          "query": "cuaderno",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 1.1000000089406967,
+          "p50FrameMs": 27.599999994039536,
+          "p95FrameMs": 29.900000005960464
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 0.5,
+          "p50FrameMs": 29.700000002980232,
+          "p95FrameMs": 30.5
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 0.800000011920929,
+          "p50FrameMs": 30.099999994039536,
+          "p95FrameMs": 30.399999991059303
+        }
+      ],
+      "filterVisible": 1,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 203,
+      "domContentLoadedMs": 66.20000000298023,
+      "loadEventMs": 66.29999999701977,
+      "longTasks": []
+    },
+    {
+      "variant": "candidate",
+      "count": 3,
+      "cpuThrottle": 4,
+      "buildMs": 5840.437408,
+      "searchHtmlBytes": 13353,
+      "initialVisible": 3,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 4179,
+      "transferredIndexBytes": 4479,
+      "stdSyncHandlerMs": 1.4854208163963734,
+      "p25SyncHandlerMs": 0.8999999910593033,
+      "p75SyncHandlerMs": 1.7000000029802322,
+      "p50SyncHandlerMs": 1.1000000089406967,
+      "minSyncHandlerMs": 0.20000000298023224,
+      "maxSyncHandlerMs": 6,
+      "p50InputToFrameMs": 26.600000008940697,
+      "p95SyncHandlerMs": 4.700000002980232,
+      "p95InputToFrameMs": 28.599999994039536,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 1.800000011920929,
+          "p95SyncMs": 6,
+          "p50FrameMs": 26.200000002980232,
+          "p95FrameMs": 26.700000002980232
+        },
+        {
+          "query": "cuaderno",
+          "samples": 5,
+          "p50SyncMs": 1.2999999970197678,
+          "p95SyncMs": 4.200000002980232,
+          "p50FrameMs": 26.700000002980232,
+          "p95FrameMs": 27.100000008940697
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 0.8999999910593033,
+          "p95SyncMs": 1.4000000059604645,
+          "p50FrameMs": 27.600000008940697,
+          "p95FrameMs": 28.599999994039536
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 0.8999999910593033,
+          "p95SyncMs": 4.700000002980232,
+          "p50FrameMs": 26.600000008940697,
+          "p95FrameMs": 29.899999991059303
+        }
+      ],
+      "filterVisible": 1,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 203,
+      "domContentLoadedMs": 179.79999999701977,
+      "loadEventMs": 180,
+      "longTasks": [
+        {
+          "start": 72.1000000089407,
+          "duration": 96
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "count": 100,
+      "cpuThrottle": 1,
+      "buildMs": 5778.523749,
+      "searchHtmlBytes": 119871,
+      "initialVisible": 100,
+      "decodedScriptBytes": 454923,
+      "transferredScriptBytes": 455223,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 0.747311850104648,
+      "p25SyncHandlerMs": 3.2000000029802322,
+      "p75SyncHandlerMs": 4.0999999940395355,
+      "p50SyncHandlerMs": 3.7000000029802322,
+      "minSyncHandlerMs": 3.0999999940395355,
+      "maxSyncHandlerMs": 6.4000000059604645,
+      "p50InputToFrameMs": 31.599999994039536,
+      "p95SyncHandlerMs": 5,
+      "p95InputToFrameMs": 32.29999999701977,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 4.299999997019768,
+          "p95SyncMs": 6.4000000059604645,
+          "p50FrameMs": 31.799999997019768,
+          "p95FrameMs": 32.20000000298023
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 3.8999999910593033,
+          "p95SyncMs": 4.200000002980232,
+          "p50FrameMs": 31.599999994039536,
+          "p95FrameMs": 32.1000000089407
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 3.6000000089406967,
+          "p95SyncMs": 4.299999997019768,
+          "p50FrameMs": 31.700000002980232,
+          "p95FrameMs": 32.20000000298023
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 3.2000000029802322,
+          "p95SyncMs": 4.0999999940395355,
+          "p50FrameMs": 31.599999994039536,
+          "p95FrameMs": 42.70000000298023
+        }
+      ],
+      "filterVisible": 49,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 2520,
+      "domContentLoadedMs": 166,
+      "loadEventMs": 179,
+      "longTasks": [
+        {
+          "start": 36.900000005960464,
+          "duration": 99
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "count": 100,
+      "cpuThrottle": 4,
+      "buildMs": 5778.523749,
+      "searchHtmlBytes": 119871,
+      "initialVisible": 100,
+      "decodedScriptBytes": 454923,
+      "transferredScriptBytes": 455223,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 3.303089464731807,
+      "p25SyncHandlerMs": 17.400000005960464,
+      "p75SyncHandlerMs": 20.5,
+      "p50SyncHandlerMs": 18.700000002980232,
+      "minSyncHandlerMs": 13.399999991059303,
+      "maxSyncHandlerMs": 26.80000001192093,
+      "p50InputToFrameMs": 43.79999999701977,
+      "p95SyncHandlerMs": 25.799999997019768,
+      "p95InputToFrameMs": 92.29999999701977,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 20,
+          "p95SyncMs": 25.799999997019768,
+          "p50FrameMs": 64.90000000596046,
+          "p95FrameMs": 92.29999999701977
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 22.599999994039536,
+          "p95SyncMs": 26.80000001192093,
+          "p50FrameMs": 27.399999991059303,
+          "p95FrameMs": 43.79999999701977
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 17.80000001192093,
+          "p95SyncMs": 19.200000002980232,
+          "p50FrameMs": 30.100000008940697,
+          "p95FrameMs": 32.099999994039536
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 18,
+          "p95SyncMs": 20.80000001192093,
+          "p50FrameMs": 76.79999999701977,
+          "p95FrameMs": 179.20000000298023
+        }
+      ],
+      "filterVisible": 49,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 2520,
+      "domContentLoadedMs": 491,
+      "loadEventMs": 544.5999999940395,
+      "longTasks": [
+        {
+          "start": 92.8999999910593,
+          "duration": 271
+        },
+        {
+          "start": 446.3999999910593,
+          "duration": 99
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "count": 100,
+      "cpuThrottle": 1,
+      "buildMs": 5872.509597000004,
+      "searchHtmlBytes": 23595,
+      "initialVisible": 12,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 88111,
+      "transferredIndexBytes": 88411,
+      "stdSyncHandlerMs": 0.45855752020212054,
+      "p25SyncHandlerMs": 0.19999998807907104,
+      "p75SyncHandlerMs": 0.3999999910593033,
+      "p50SyncHandlerMs": 0.20000000298023224,
+      "minSyncHandlerMs": 0.09999999403953552,
+      "maxSyncHandlerMs": 1.7000000029802322,
+      "p50InputToFrameMs": 29.899999991059303,
+      "p95SyncHandlerMs": 1.5999999940395355,
+      "p95InputToFrameMs": 30.80000001192093,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 0.3999999910593033,
+          "p95SyncMs": 1.5999999940395355,
+          "p50FrameMs": 29.299999997019768,
+          "p95FrameMs": 30.5
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 1.7000000029802322,
+          "p50FrameMs": 29.799999997019768,
+          "p95FrameMs": 30.600000008940697
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 0.7000000029802322,
+          "p50FrameMs": 30,
+          "p95FrameMs": 30.80000001192093
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 1,
+          "p50FrameMs": 30.5,
+          "p95FrameMs": 30.900000005960464
+        }
+      ],
+      "filterVisible": 12,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 430,
+      "domContentLoadedMs": 31.600000008940697,
+      "loadEventMs": 52.900000005960464,
+      "longTasks": []
+    },
+    {
+      "variant": "candidate",
+      "count": 100,
+      "cpuThrottle": 4,
+      "buildMs": 5872.509597000004,
+      "searchHtmlBytes": 23595,
+      "initialVisible": 12,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 88111,
+      "transferredIndexBytes": 88411,
+      "stdSyncHandlerMs": 2.9619419289263798,
+      "p25SyncHandlerMs": 0.7999999970197678,
+      "p75SyncHandlerMs": 1.7000000029802322,
+      "p50SyncHandlerMs": 1.2999999970197678,
+      "minSyncHandlerMs": 0.6000000089406967,
+      "maxSyncHandlerMs": 13.099999994039536,
+      "p50InputToFrameMs": 26.5,
+      "p95SyncHandlerMs": 7.5,
+      "p95InputToFrameMs": 34.5,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 1.300000011920929,
+          "p95SyncMs": 13.099999994039536,
+          "p50FrameMs": 26.399999991059303,
+          "p95FrameMs": 49.20000000298023
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 1.3999999910593033,
+          "p95SyncMs": 5,
+          "p50FrameMs": 25.5,
+          "p95FrameMs": 28
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 1.2999999970197678,
+          "p95SyncMs": 2.6000000089406967,
+          "p50FrameMs": 27.400000005960464,
+          "p95FrameMs": 30.799999997019768
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 1,
+          "p95SyncMs": 7.5,
+          "p50FrameMs": 27.200000002980232,
+          "p95FrameMs": 34.5
+        }
+      ],
+      "filterVisible": 12,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 430,
+      "domContentLoadedMs": 198.8999999910593,
+      "loadEventMs": 199.70000000298023,
+      "longTasks": [
+        {
+          "start": 70.29999999701977,
+          "duration": 105
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "count": 500,
+      "cpuThrottle": 1,
+      "buildMs": 6007.604209000005,
+      "searchHtmlBytes": 565671,
+      "initialVisible": 500,
+      "decodedScriptBytes": 2294656,
+      "transferredScriptBytes": 2294956,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 1.9555306207651062,
+      "p25SyncHandlerMs": 23,
+      "p75SyncHandlerMs": 24.5,
+      "p50SyncHandlerMs": 24.200000002980232,
+      "minSyncHandlerMs": 21,
+      "maxSyncHandlerMs": 30.600000008940697,
+      "p50InputToFrameMs": 38.29999999701977,
+      "p95SyncHandlerMs": 25.799999997019768,
+      "p95InputToFrameMs": 91.1000000089407,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 24.400000005960464,
+          "p95SyncMs": 30.600000008940697,
+          "p50FrameMs": 76.90000000596046,
+          "p95FrameMs": 91.1000000089407
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 21.69999998807907,
+          "p95SyncMs": 25.799999997019768,
+          "p50FrameMs": 31.69999998807907,
+          "p95FrameMs": 38.29999999701977
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 24,
+          "p95SyncMs": 24.5,
+          "p50FrameMs": 31.799999997019768,
+          "p95FrameMs": 32.099999994039536
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 24.399999991059303,
+          "p95SyncMs": 25.299999997019768,
+          "p50FrameMs": 74.8999999910593,
+          "p95FrameMs": 166.09999999403954
+        }
+      ],
+      "filterVisible": 249,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 12120,
+      "domContentLoadedMs": 350.8999999910593,
+      "loadEventMs": 399,
+      "longTasks": [
+        {
+          "start": 54.3999999910593,
+          "duration": 253
+        },
+        {
+          "start": 312,
+          "duration": 87
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "count": 500,
+      "cpuThrottle": 4,
+      "buildMs": 6007.604209000005,
+      "searchHtmlBytes": 565671,
+      "initialVisible": 500,
+      "decodedScriptBytes": 2294656,
+      "transferredScriptBytes": 2294956,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 19.92827827513575,
+      "p25SyncHandlerMs": 137.90000000596046,
+      "p75SyncHandlerMs": 162.40000000596046,
+      "p50SyncHandlerMs": 144.90000000596046,
+      "minSyncHandlerMs": 125.79999999701977,
+      "maxSyncHandlerMs": 211.70000000298023,
+      "p50InputToFrameMs": 250.5,
+      "p95SyncHandlerMs": 182.29999999701977,
+      "p95InputToFrameMs": 577.5999999940395,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 164.70000000298023,
+          "p95SyncMs": 182.29999999701977,
+          "p50FrameMs": 555.5999999940395,
+          "p95FrameMs": 577.5999999940395
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 148.29999999701977,
+          "p95SyncMs": 211.70000000298023,
+          "p50FrameMs": 167.3999999910593,
+          "p95FrameMs": 250.5
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 135.70000000298023,
+          "p95SyncMs": 141.20000000298023,
+          "p50FrameMs": 149.6000000089407,
+          "p95FrameMs": 158.20000000298023
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 143.1000000089407,
+          "p95SyncMs": 172.90000000596046,
+          "p50FrameMs": 535.7000000029802,
+          "p95FrameMs": 893.7000000029802
+        }
+      ],
+      "filterVisible": 249,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 12120,
+      "domContentLoadedMs": 1711.0999999940395,
+      "loadEventMs": 2008.5,
+      "longTasks": [
+        {
+          "start": 98.8999999910593,
+          "duration": 140
+        },
+        {
+          "start": 1497.5999999940395,
+          "duration": 515
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "count": 500,
+      "cpuThrottle": 1,
+      "buildMs": 5906.591419999997,
+      "searchHtmlBytes": 23596,
+      "initialVisible": 12,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 434644,
+      "transferredIndexBytes": 434944,
+      "stdSyncHandlerMs": 0.5632716931287616,
+      "p25SyncHandlerMs": 0.20000000298023224,
+      "p75SyncHandlerMs": 0.29999999701976776,
+      "p50SyncHandlerMs": 0.29999999701976776,
+      "minSyncHandlerMs": 0.19999998807907104,
+      "maxSyncHandlerMs": 2.5,
+      "p50InputToFrameMs": 29.69999998807907,
+      "p95SyncHandlerMs": 1.4000000059604645,
+      "p95InputToFrameMs": 30.5,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 2.5,
+          "p50FrameMs": 29.299999997019768,
+          "p95FrameMs": 29.600000008940697
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 0.20000000298023224,
+          "p95SyncMs": 1.4000000059604645,
+          "p50FrameMs": 29.69999998807907,
+          "p95FrameMs": 30.599999994039536
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 0.7999999970197678,
+          "p50FrameMs": 29.80000001192093,
+          "p95FrameMs": 30.100000008940697
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 1.0999999940395355,
+          "p50FrameMs": 30.299999997019768,
+          "p95FrameMs": 30.5
+        }
+      ],
+      "filterVisible": 12,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 430,
+      "domContentLoadedMs": 45.1000000089407,
+      "loadEventMs": 69.30000001192093,
+      "longTasks": []
+    },
+    {
+      "variant": "candidate",
+      "count": 500,
+      "cpuThrottle": 4,
+      "buildMs": 5906.591419999997,
+      "searchHtmlBytes": 23596,
+      "initialVisible": 12,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 434644,
+      "transferredIndexBytes": 434944,
+      "stdSyncHandlerMs": 4.333990657409199,
+      "p25SyncHandlerMs": 0.7999999970197678,
+      "p75SyncHandlerMs": 2.0999999940395355,
+      "p50SyncHandlerMs": 1.199999988079071,
+      "minSyncHandlerMs": 0.20000000298023224,
+      "maxSyncHandlerMs": 20.100000008940697,
+      "p50InputToFrameMs": 25.700000002980232,
+      "p95SyncHandlerMs": 6.5999999940395355,
+      "p95InputToFrameMs": 36.3999999910593,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 1.7000000029802322,
+          "p95SyncMs": 20.100000008940697,
+          "p50FrameMs": 24.80000001192093,
+          "p95FrameMs": 56
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 0.7999999970197678,
+          "p95SyncMs": 5.5,
+          "p50FrameMs": 23.600000008940697,
+          "p95FrameMs": 28.700000002980232
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 1.199999988079071,
+          "p95SyncMs": 3.300000011920929,
+          "p50FrameMs": 27.100000008940697,
+          "p95FrameMs": 28.700000002980232
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 1,
+          "p95SyncMs": 6.5999999940395355,
+          "p50FrameMs": 27.099999994039536,
+          "p95FrameMs": 36.3999999910593
+        }
+      ],
+      "filterVisible": 12,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 430,
+      "domContentLoadedMs": 199.79999999701977,
+      "loadEventMs": 200.09999999403954,
+      "longTasks": [
+        {
+          "start": 66.70000000298023,
+          "duration": 123
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "count": 900,
+      "cpuThrottle": 1,
+      "buildMs": 5810.821857999996,
+      "searchHtmlBytes": 1011471,
+      "initialVisible": 900,
+      "decodedScriptBytes": 4134390,
+      "transferredScriptBytes": 4134690,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 1.9903517257751453,
+      "p25SyncHandlerMs": 61,
+      "p75SyncHandlerMs": 63.19999998807907,
+      "p50SyncHandlerMs": 61.900000005960464,
+      "minSyncHandlerMs": 59.70000000298023,
+      "maxSyncHandlerMs": 67.5,
+      "p50InputToFrameMs": 84.3999999910593,
+      "p95SyncHandlerMs": 67.29999999701977,
+      "p95InputToFrameMs": 194.29999999701977,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 64.70000000298023,
+          "p95SyncMs": 67.5,
+          "p50FrameMs": 160.29999999701977,
+          "p95FrameMs": 177.8999999910593
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 61.599999994039536,
+          "p95SyncMs": 63.19999998807907,
+          "p50FrameMs": 65.29999999701977,
+          "p95FrameMs": 84.3999999910593
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 61,
+          "p95SyncMs": 63.29999999701977,
+          "p50FrameMs": 64.40000000596046,
+          "p95FrameMs": 70.09999999403954
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 61.900000005960464,
+          "p95SyncMs": 62.79999999701977,
+          "p50FrameMs": 186.70000000298023,
+          "p95FrameMs": 347.19999998807907
+        }
+      ],
+      "filterVisible": 449,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 21720,
+      "domContentLoadedMs": 629.7000000029802,
+      "loadEventMs": 704.9000000059605,
+      "longTasks": [
+        {
+          "start": 75.20000000298023,
+          "duration": 258
+        },
+        {
+          "start": 544,
+          "duration": 161
+        }
+      ]
+    },
+    {
+      "variant": "baseline",
+      "count": 900,
+      "cpuThrottle": 4,
+      "buildMs": 5810.821857999996,
+      "searchHtmlBytes": 1011471,
+      "initialVisible": 900,
+      "decodedScriptBytes": 4134390,
+      "transferredScriptBytes": 4134690,
+      "decodedIndexBytes": 0,
+      "transferredIndexBytes": 0,
+      "stdSyncHandlerMs": 504.99096338218743,
+      "p25SyncHandlerMs": 290.5,
+      "p75SyncHandlerMs": 405.79999999701977,
+      "p50SyncHandlerMs": 349.70000000298023,
+      "minSyncHandlerMs": 192.29999999701977,
+      "maxSyncHandlerMs": 2278.3999999910593,
+      "p50InputToFrameMs": 705.2999999970198,
+      "p95SyncHandlerMs": 1664.2999999970198,
+      "p95InputToFrameMs": 3120,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 290.5,
+          "p95SyncMs": 363.70000000298023,
+          "p50FrameMs": 927.6000000089407,
+          "p95FrameMs": 977.5
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 350.1000000089407,
+          "p95SyncMs": 406,
+          "p50FrameMs": 377.5,
+          "p95FrameMs": 437.80000001192093
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 378.20000000298023,
+          "p95SyncMs": 698.2999999970198,
+          "p50FrameMs": 385,
+          "p95FrameMs": 705.2999999970198
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 437.09999999403954,
+          "p95SyncMs": 2278.3999999910593,
+          "p50FrameMs": 2589.2000000029802,
+          "p95FrameMs": 3267.8999999910593
+        }
+      ],
+      "filterVisible": 449,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 21720,
+      "domContentLoadedMs": 2364.7000000029802,
+      "loadEventMs": 2829.1000000089407,
+      "longTasks": [
+        {
+          "start": 153.6000000089407,
+          "duration": 371
+        },
+        {
+          "start": 1130.9000000059605,
+          "duration": 70
+        },
+        {
+          "start": 1979.4000000059605,
+          "duration": 850
+        }
+      ]
+    },
+    {
+      "variant": "candidate",
+      "count": 900,
+      "cpuThrottle": 1,
+      "buildMs": 5952.465108999997,
+      "searchHtmlBytes": 23596,
+      "initialVisible": 12,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 781178,
+      "transferredIndexBytes": 781478,
+      "stdSyncHandlerMs": 0.5103920067325133,
+      "p25SyncHandlerMs": 0.29999999701976776,
+      "p75SyncHandlerMs": 0.5999999940395355,
+      "p50SyncHandlerMs": 0.29999999701976776,
+      "minSyncHandlerMs": 0.10000000894069672,
+      "maxSyncHandlerMs": 1.9000000059604645,
+      "p50InputToFrameMs": 30.200000002980232,
+      "p95SyncHandlerMs": 1.7999999970197678,
+      "p95InputToFrameMs": 31.400000005960464,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 1.7999999970197678,
+          "p50FrameMs": 29.69999998807907,
+          "p95FrameMs": 31.400000005960464
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 1.9000000059604645,
+          "p50FrameMs": 30.299999997019768,
+          "p95FrameMs": 30.700000002980232
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 0.29999999701976776,
+          "p95SyncMs": 0.5999999940395355,
+          "p50FrameMs": 30.200000002980232,
+          "p95FrameMs": 30.399999991059303
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 0.4000000059604645,
+          "p95SyncMs": 1.4000000059604645,
+          "p50FrameMs": 29.80000001192093,
+          "p95FrameMs": 31.5
+        }
+      ],
+      "filterVisible": 12,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 430,
+      "domContentLoadedMs": 51.29999999701977,
+      "loadEventMs": 51.5,
+      "longTasks": []
+    },
+    {
+      "variant": "candidate",
+      "count": 900,
+      "cpuThrottle": 4,
+      "buildMs": 5952.465108999997,
+      "searchHtmlBytes": 23596,
+      "initialVisible": 12,
+      "decodedScriptBytes": 7444,
+      "transferredScriptBytes": 7744,
+      "decodedIndexBytes": 781178,
+      "transferredIndexBytes": 781478,
+      "stdSyncHandlerMs": 2.3124175649506316,
+      "p25SyncHandlerMs": 1,
+      "p75SyncHandlerMs": 2.2000000029802322,
+      "p50SyncHandlerMs": 1.5,
+      "minSyncHandlerMs": 0.20000000298023224,
+      "maxSyncHandlerMs": 10.099999994039536,
+      "p50InputToFrameMs": 27.799999997019768,
+      "p95SyncHandlerMs": 6,
+      "p95InputToFrameMs": 36.6000000089407,
+      "perQuery": [
+        {
+          "query": "carga",
+          "samples": 5,
+          "p50SyncMs": 1.5999999940395355,
+          "p95SyncMs": 10.099999994039536,
+          "p50FrameMs": 27,
+          "p95FrameMs": 39.8999999910593
+        },
+        {
+          "query": "000004",
+          "samples": 5,
+          "p50SyncMs": 2.0999999940395355,
+          "p95SyncMs": 6,
+          "p50FrameMs": 27.799999997019768,
+          "p95FrameMs": 31.299999997019768
+        },
+        {
+          "query": "no-coincide-con-el-catalogo",
+          "samples": 5,
+          "p50SyncMs": 1.2000000029802322,
+          "p95SyncMs": 2.2000000029802322,
+          "p50FrameMs": 28.400000005960464,
+          "p95FrameMs": 30.599999994039536
+        },
+        {
+          "query": "interfaz",
+          "samples": 5,
+          "p50SyncMs": 1.5,
+          "p95SyncMs": 4.5,
+          "p50FrameMs": 29.399999991059303,
+          "p95FrameMs": 36.6000000089407
+        }
+      ],
+      "filterVisible": 12,
+      "errors": [],
+      "externalRequests": [],
+      "domNodes": 430,
+      "domContentLoadedMs": 229.40000000596046,
+      "loadEventMs": 230.20000000298023,
+      "longTasks": [
+        {
+          "start": 83.6000000089407,
+          "duration": 120
+        },
+        {
+          "start": 278.70000000298023,
+          "duration": 98
+        }
+      ]
+    }
+  ]
+}

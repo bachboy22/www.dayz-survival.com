@@ -1,0 +1,4 @@
+---
+import EvidenceLabel from './content/EvidenceLabel.astro';
+---
+<template id="search-card-template"><article class="featured-card" data-search-result data-content-id=""><div class="card-kicker"><span data-slot="identity"></span><span class="pill demo">DEMO · Demostración</span></div><h3><a data-result-link></a></h3><p data-slot="summary"></p><div class="tag-list" data-slot="tags"></div><EvidenceLabel compact/><div class="card-bottom"><span class="card-meta" data-slot="meta"></span><a data-result-action class="text-link"></a></div></article></template>
