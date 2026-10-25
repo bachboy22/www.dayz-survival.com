@@ -1,11 +1,13 @@
 ---
 import '../styles/global.css';
+import { pageDescription } from '../lib/page-metadata';
+import product from '../../package.json';
 import '../styles/accessibility.css';
 import Icon from '../components/Icon.astro';
 import GlobalHeader from '../components/navigation/GlobalHeader.astro';
 import '../styles/prototype.css';
 interface Props { title: string; description?: string; }
-const { title, description = 'Prototipo local del manual de campo DAYZ-SURVIVAL. Solo contenido de demostración.' } = Astro.props;
+const { title, description = pageDescription(Astro.url.pathname, Astro.props.title) } = Astro.props;
 
 ---
 <!doctype html>
@@ -21,10 +23,10 @@ const { title, description = 'Prototipo local del manual de campo DAYZ-SURVIVAL.
   </head>
   <body>
     <a class="skip-link" href="#main-content">Saltar al contenido</a>
-    <div class="edition-bar"><div class="container edition-inner"><span><span class="status-dot"></span> EDICIÓN DE DESARROLLO</span><span>Solo demostración <span class="edition-version">/ DESIGN-001-B</span></span></div></div>
+    <div class="edition-bar"><div class="container edition-inner"><span><span class="status-dot"></span> EDICIÓN DE DESARROLLO</span><span>Solo demostración <span class="edition-version">/ DESIGN-001-B · PERF-001</span></span></div></div>
     <GlobalHeader/>
     <main id="main-content" tabindex="-1"><slot /></main>
-    <footer class="site-footer"><div class="container footer-top"><div><a href="/" class="footer-brand">DAYZ-SURVIVAL<span>THE CHERNARUS FIELD MANUAL</span></a><p>Aprende el terreno. Prepárate bien. Regresa con vida.</p></div><div class="footer-note"><span class="eyebrow">CUADERNO DE DESARROLLO / 001</span><p>Una base para leer, consultar y conectar.<br/>Sin manuscritos publicados ni certificación técnica.</p></div></div><div class="container footer-bottom"><span>Proyecto independiente · DayZ PC vanilla</span><a href="/fuentes/">Fuentes y estado editorial <Icon size={14}/></a><span>DESIGN-001-B · Demostración</span></div></footer>
+    <footer class="site-footer"><div class="container footer-top"><div><a href="/" class="footer-brand">DAYZ-SURVIVAL<span>THE CHERNARUS FIELD MANUAL</span></a><p>Aprende el terreno. Prepárate bien. Regresa con vida.</p></div><div class="footer-note"><span class="eyebrow">CUADERNO DE DESARROLLO / 001</span><p>Una base para leer, consultar y conectar.<br/>Sin manuscritos publicados ni certificación técnica.</p></div></div><div class="container footer-bottom"><span>Proyecto independiente · DayZ PC vanilla</span><a href="/fuentes/">Fuentes y estado editorial <Icon size={14}/></a><span>Producto {product.version} · DESIGN-001-B · DEMO</span></div></footer>
 
   </body>
 </html>

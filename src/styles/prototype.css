@@ -97,3 +97,9 @@
     .evidence-labels dt,.evidence-labels dd { color: black; }
   }
 }
+@layer prototype {
+  .search-pagination { display: flex; flex-wrap: wrap; align-items: center; gap: .75rem; margin-block: 1.5rem; }
+  .search-pagination > * { max-width: 100%; }
+  .search-pagination button[aria-disabled="true"] { color: var(--muted); border-color: #859079; cursor: default; }
+  #results-heading:focus { outline: 3px solid var(--accent); outline-offset: 4px; }
+}
