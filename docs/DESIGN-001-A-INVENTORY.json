@@ -1,0 +1,332 @@
+{
+  "schema_version": 1,
+  "audit": "DESIGN-001-A",
+  "date": "2026-10-25",
+  "baseline_commit": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba",
+  "source_files": [
+    {
+      "path": ".github/pull_request_template.md",
+      "bytes": 863,
+      "sha256": "0af02c0cf7d890047236091cad0ce72d6d3cd1624f84e573df080f3b373d095a"
+    },
+    {
+      "path": ".github/workflows/ci.yml",
+      "bytes": 1547,
+      "sha256": "b14cb743ebe26469f181d44a72054dbfda7790273cae32a8edacce6c473c4a5c"
+    },
+    {
+      "path": ".gitignore",
+      "bytes": 328,
+      "sha256": "513c7a718981096c9df40ff6a735bdb04d2b1ead13edf13dfc18358da5a3a5ec"
+    },
+    {
+      "path": ".npmrc",
+      "bytes": 35,
+      "sha256": "cde76ca04e048c3eba070a2c0dfcf5b723cf6014eab177157096b924f24ec4ca"
+    },
+    {
+      "path": ".nvmrc",
+      "bytes": 8,
+      "sha256": "7e8a2fa94951112b894a3dbe3d05efef5e9263741fa49125f0a70f40fedab4cc"
+    },
+    {
+      "path": "AGENTS.md",
+      "bytes": 1543,
+      "sha256": "bba04c5d43b5fda35088361db51df6373329bc8937fe15b30a331a4d8ae7acf7"
+    },
+    {
+      "path": "README.md",
+      "bytes": 5972,
+      "sha256": "1ede639af90a20870248aea87478503f720e09ed01c8fcdfd70b44706bff1fa9"
+    },
+    {
+      "path": "astro.config.mjs",
+      "bytes": 161,
+      "sha256": "83416be3934a3e8e5c9e000cbe95053aef15256e127289baafcc5d0cf9519a17"
+    },
+    {
+      "path": "docs/ADR-001.md",
+      "bytes": 2101,
+      "sha256": "a59d0ce18aa00e272f7a3b56b664582822f9d52c4ac812a1fdab0c9540ff23f4"
+    },
+    {
+      "path": "docs/ART-001-VISUAL-POLICY.md",
+      "bytes": 8029,
+      "sha256": "d60924ecd269f994d8be1ac2b80ae54e91fe9aedaaedea4365bacf38a89861df"
+    },
+    {
+      "path": "docs/BOOTSTRAP-README.md",
+      "bytes": 722,
+      "sha256": "191e78f4832e8fe15345898b63d95c33b7b220d06b0ea8ac3385e0212ba7c73a"
+    },
+    {
+      "path": "docs/CHANGED-FILES.md",
+      "bytes": 1734,
+      "sha256": "52dc850463b0fc1af5e95fda32f32a9a9ef735dc9f29dfa67504175a00113de4"
+    },
+    {
+      "path": "docs/CONTROL.md",
+      "bytes": 648,
+      "sha256": "2fa7d714af2327e722cb44e04ee2b215c5b79865ecd3cfc96591e644d1aad854"
+    },
+    {
+      "path": "docs/DEVELOPMENT.md",
+      "bytes": 4420,
+      "sha256": "67e4d8780843067a88c8bd8be25c71f256e9c8054e00519eb5ec0c612dab4f74"
+    },
+    {
+      "path": "docs/ENTREGA-v0.1.md",
+      "bytes": 8160,
+      "sha256": "7bab050c0a6fb560c2d5dfb21cb24d16c9f902d95c3c82c6b193767e178aa348"
+    },
+    {
+      "path": "docs/GITHUB-WRITE-RESULT.json",
+      "bytes": 448,
+      "sha256": "949663f22919dbd0a924881ee0a296bceaa31551510dcecc0518fb3115351adb"
+    },
+    {
+      "path": "docs/IMPORT-CONTRACT.md",
+      "bytes": 5380,
+      "sha256": "ca72146964fd740a5ca1e4f1ec255229ef09dc71701846c9035815aaa5e16adf"
+    },
+    {
+      "path": "docs/PENDING.md",
+      "bytes": 2078,
+      "sha256": "906856de41698fdf656f7ad2f1febf6729d3a2de2f78c2a766c41a379d8e5cf2"
+    },
+    {
+      "path": "docs/PLAN_MVP.md",
+      "bytes": 1335,
+      "sha256": "0d50b505f1e0f30e6c72c889f8e625398da07ab6efe5bdc40972a7995d3d222a"
+    },
+    {
+      "path": "docs/PR-v0.1.md",
+      "bytes": 1590,
+      "sha256": "d53c09619361caae8c30d6dfb6afe6654985f2e1c118055d10f01ce5d8a1c3a9"
+    },
+    {
+      "path": "docs/WEB-002-REVIEW.md",
+      "bytes": 4317,
+      "sha256": "6fc31489fd0ec90d79b988cef907e36d75a7d6590a98085b423e366865a72fbc"
+    },
+    {
+      "path": "docs/WEB-003-ACCESSIBILITY.md",
+      "bytes": 14855,
+      "sha256": "4218ce2563794054c66c326f3c2c8e763333ee31eea933203dd26377b1cc7865"
+    },
+    {
+      "path": "package-lock.json",
+      "bytes": 184672,
+      "sha256": "f68645f81925f86a370c157b961149c034bfd21c60197a8395eb3b7b544cd54c"
+    },
+    {
+      "path": "package.json",
+      "bytes": 932,
+      "sha256": "265be86ca7113fd4f9abd3a71bb17b452caaa6ef258d0718756bca8f4547e3c2"
+    },
+    {
+      "path": "playwright.config.ts",
+      "bytes": 1254,
+      "sha256": "6a7bde65f9bd0ec9d9c83045ea517825e7afc0adc13ebf4cd4dbf30b3ed1add0"
+    },
+    {
+      "path": "public/favicon.svg",
+      "bytes": 245,
+      "sha256": "65923f77d045100b3dcaa32ad2dc699590119a27f8b8ba1564234fd02c056d3b"
+    },
+    {
+      "path": "public/robots.txt",
+      "bytes": 26,
+      "sha256": "331ea9090db0c9f6f597bd9840fd5b171830f6e0b3ba1cb24dfa91f0c95aedc1"
+    },
+    {
+      "path": "scripts/validate-content.ts",
+      "bytes": 408,
+      "sha256": "6e0fbec6b1c6da0a32aae05f4b314c3289828d1fe5875f1a3ca4a581b7efc42c"
+    },
+    {
+      "path": "scripts/validate-import.ts",
+      "bytes": 1523,
+      "sha256": "316fd32b9c38535a7b1e7ebc709b7e2644f163c83c84383b98fb32426af3811c"
+    },
+    {
+      "path": "src/components/ArticleCard.astro",
+      "bytes": 736,
+      "sha256": "b9808ad9a10b461505e56c6974c5c62885d82652d14163b9ba9b494efad70e72"
+    },
+    {
+      "path": "src/components/AtlasPage.astro",
+      "bytes": 1943,
+      "sha256": "8ca64c3660d25077bdfc9aa3a0a5fc195e784bc30f3591ba6abbf16b2d66556c"
+    },
+    {
+      "path": "src/components/DemoNotice.astro",
+      "bytes": 358,
+      "sha256": "0eb8f5c24af11459c1dd4c5c40895aa4c2e46473c7b41c7fb7575353d783f093"
+    },
+    {
+      "path": "src/components/Icon.astro",
+      "bytes": 963,
+      "sha256": "da9ab50f4b90943a77811d6ca8ecf0809ce77ab1dc0f095565d40c9b7eb226a3"
+    },
+    {
+      "path": "src/components/Terrain.astro",
+      "bytes": 3532,
+      "sha256": "0b1f812de51ff50655b9ebae206c27d875e7dbc5b19996a7bcf340c98ae9872c"
+    },
+    {
+      "path": "src/data/demo.ts",
+      "bytes": 2666,
+      "sha256": "d561cb102ee8a1891b0f211f460c4c329077c0483fad0f910547af784d17e6ee"
+    },
+    {
+      "path": "src/layouts/Layout.astro",
+      "bytes": 5031,
+      "sha256": "d34b310684b49a13cbd85e9094ead0536bb853a2ddf10dce85730a238806d475"
+    },
+    {
+      "path": "src/lib/content.ts",
+      "bytes": 13421,
+      "sha256": "e799ab9765ad404e8bc90fb126f50a57a1a0021cb576a2bcb925d5d57b6c3a88"
+    },
+    {
+      "path": "src/lib/search.ts",
+      "bytes": 1076,
+      "sha256": "08e6c6531b6c1bfd83ca9f4d8747b8eab46a41306a645947bd98b90968441a5d"
+    },
+    {
+      "path": "src/pages/404.astro",
+      "bytes": 393,
+      "sha256": "dc59f87ec04e4c40152d5f5d21b55c7717b8f05d025e7baa0b98baac52093017"
+    },
+    {
+      "path": "src/pages/acerca/index.astro",
+      "bytes": 1821,
+      "sha256": "7acaac84849cbea8322bb1bf2448f0edbd5ed5d292b446b6fbb55e09859c267a"
+    },
+    {
+      "path": "src/pages/atlas/chernarus/index.astro",
+      "bytes": 114,
+      "sha256": "a863ba48f668715f4b49bb93506937b659043f6b6ddb4e3a0e1b62d4e632d308"
+    },
+    {
+      "path": "src/pages/atlas/livonia/index.astro",
+      "bytes": 107,
+      "sha256": "58f3dc6e0d46a2d40a70575e240202f61c81ffd145a0d4a697bb2c6f5d4f8f69"
+    },
+    {
+      "path": "src/pages/buscar/index.astro",
+      "bytes": 2351,
+      "sha256": "33c38d981ded234bce1f9f8483e70231703464c6f403465342f0b9b94acd1ee7"
+    },
+    {
+      "path": "src/pages/fichas/index.astro",
+      "bytes": 1571,
+      "sha256": "3d5cd0de4cf3180307bd252ec741f0a13a84e8f4908af5a86a1292dd74e5a2f8"
+    },
+    {
+      "path": "src/pages/fuentes/index.astro",
+      "bytes": 3265,
+      "sha256": "3215c3dfa40594d5337a7b9ce3fd8aa0c4252c1f539c87312dd47b41cf9b80eb"
+    },
+    {
+      "path": "src/pages/index.astro",
+      "bytes": 3794,
+      "sha256": "6a490ebd5d6e6d88aa0ce21d1819a60fa1ffdf1c7f711e8f3b26ce148d31f880"
+    },
+    {
+      "path": "src/pages/manual/index.astro",
+      "bytes": 1533,
+      "sha256": "77e6d6b8766a3cd99a995c4476fea3f288c0426a1096cf818af89c05b139c9bb"
+    },
+    {
+      "path": "src/pages/manual/leer-una-ficha.astro",
+      "bytes": 3903,
+      "sha256": "c9b72eba0d4109d34460f2b3b9d72d4909c350838d926d243205db4c96c7a0c6"
+    },
+    {
+      "path": "src/scripts/search.ts",
+      "bytes": 2382,
+      "sha256": "ca8c2a04c4ceb31d5550dada06a4f81d23b51e7b11b1c45f07b950dd02860cab"
+    },
+    {
+      "path": "src/styles/accessibility.css",
+      "bytes": 5073,
+      "sha256": "ea25cfff23c74514f21ede6817a51766dcfc33d54569ea4aa2c73d153e7b2163"
+    },
+    {
+      "path": "src/styles/global.css",
+      "bytes": 22777,
+      "sha256": "ba8ae2243eb2c9bb72500393e9366704e05c6696821f6dd940512bad6b671828"
+    },
+    {
+      "path": "tests/e2e/accessibility.spec.ts",
+      "bytes": 5186,
+      "sha256": "52b747b9c7a8571675431f92dfd53360b3d1115a6b60fe9dae29d54362bc4935"
+    },
+    {
+      "path": "tests/e2e/reader.spec.ts",
+      "bytes": 6871,
+      "sha256": "4df05906a55d8ce4b6b3c472753bb2b11825cbe104f326c42ac1f64dd16d2cb9"
+    },
+    {
+      "path": "tests/e2e/zoom.spec.ts",
+      "bytes": 9377,
+      "sha256": "904e1469f720687cc6d0b139f7d590561396532e2c5a5954601f7ff598456446"
+    },
+    {
+      "path": "tests/fixtures/zoom-extension/background.js",
+      "bytes": 121,
+      "sha256": "29d671568b5717a34487b77eec5af30710a9ab590b8caaeaf6eefe7ea627819d"
+    },
+    {
+      "path": "tests/fixtures/zoom-extension/manifest.json",
+      "bytes": 317,
+      "sha256": "839ee34febc9cc5e0c055e9977b95e5fd3245fbf47d0f5decc43dac1a6fda7d2"
+    },
+    {
+      "path": "tests/unit/content.test.ts",
+      "bytes": 11538,
+      "sha256": "801b3baa74f056aab3b955633ed5599ad03826f55618b6559dd43ac9cab11733"
+    },
+    {
+      "path": "tests/unit/import-cli.test.ts",
+      "bytes": 4600,
+      "sha256": "313899f3ac18cef6f954cc2be7f65ac7f21abec1f94c9726635e8f40a7f2d244"
+    },
+    {
+      "path": "tests/unit/search.test.ts",
+      "bytes": 1528,
+      "sha256": "d8c5aab7728e84958ca331c92f94f07c3d784cb2bef68158310f233c5e90dc79"
+    },
+    {
+      "path": "tsconfig.json",
+      "bytes": 213,
+      "sha256": "b80b07c5e25d5fdd6f223dbc168b20f0631b2f6ace4ca178c134a88ebee0e43b"
+    }
+  ],
+  "editorial_source": {
+    "version": "v0.16.1",
+    "approved_articles": 84,
+    "historical_identifiers": 294,
+    "historical_packages": 42,
+    "derived_matrices_not_historical_slots": 4,
+    "count_basis": "Owner-provided; private originals not accessed",
+    "originals_accessed": 0,
+    "originals_hashed": 0,
+    "livonia_separate_namespace": true
+  },
+  "web004": {
+    "filename": "DAYZ-SURVIVAL_WEB-004_WINDOWS_REVISION.zip",
+    "bytes": 43999242,
+    "sha256": "fbc5dde13575856ae144df8cda4b3e36d95b567cea2eb248967a167e4290ec60",
+    "crc_check": "passed",
+    "checksum_entries_verified": 73,
+    "site_files_verified": 13,
+    "site_source_commit": "b922bc9c0f4e0685b13f81f54228e1d07e4e62ba",
+    "windows_real": "NOT EXECUTED",
+    "human_acceptance": "PENDING",
+    "modified_by_audit": false
+  },
+  "scope": "Hash inventory of tracked public application files only. Not a hash manifest of the 84 private originals. No gameplay or accessibility certification."
+}
