@@ -1,0 +1,8 @@
+---
+import type { PrototypeArticle } from '../../data/catalog';
+import { findDemo } from '../../data/catalog';
+interface Props { article: PrototypeArticle }
+const { article } = Astro.props;
+const related = article.relatedDemoIds.map(findDemo).filter((item): item is PrototypeArticle => Boolean(item));
+---
+<section aria-labelledby="referencias"><h2 id="referencias" tabindex="-1">Referencias cruzadas</h2><p>Enlaces de interfaz y ejemplos sintéticos. No constituyen evidencia de mecánicas del juego.</p><ul class="reference-list">{article.references.map(ref => <li><a href={ref.href}>{ref.label}</a></li>)}{related.map(item => <li><a href={`/manual/${item.slug}/`}>{item.title} · {item.id} · DEMO</a></li>)}</ul></section>

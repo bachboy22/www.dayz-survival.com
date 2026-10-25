@@ -1,0 +1,4 @@
+---
+import { topics, catalog } from '../../data/catalog';
+---
+<nav class="topic-index" aria-label="Temas de demostración"><h2>Explorar por tema</h2><ul>{topics.map(topic => <li><a href={`/buscar/?tag=${encodeURIComponent(topic)}`}>{topic}<span>{catalog.filter(a => a.topic === topic).length} ejemplo DEMO</span></a></li>)}</ul><p>Temas del prototipo. La taxonomía editorial de supervivencia, salud, equipo, combate, campamento, navegación y mecánicas se incorporará cuando exista un catálogo autorizado.</p></nav>

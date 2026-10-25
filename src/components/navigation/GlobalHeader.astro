@@ -1,0 +1,53 @@
+---
+import Icon from '../Icon.astro';
+const path = Astro.url.pathname;
+const nav = [{ label: 'Inicio', href: '/' }, { label: 'Aprender', href: '/aprender/' }, { label: 'Manual', href: '/manual/' }, { label: 'Atlas', href: '/atlas/' }, { label: 'Herramientas', href: '/herramientas/' }, { label: 'Acerca', href: '/acerca/' }];
+---
+    <header class="site-header">
+      <div class="container header-inner">
+        <a href="/" class="brand" aria-label="DAYZ-SURVIVAL, inicio"><span class="brand-mark"><Icon name="compass" size={31}/></span><span><strong>DAYZ-SURVIVAL</strong><small>THE CHERNARUS FIELD MANUAL</small></span></a>
+        <button class="menu-toggle" type="button" aria-label="Abrir menú" aria-controls="primary-navigation" aria-expanded="false"><Icon name="menu"/></button>
+        <nav id="primary-navigation" aria-label="Navegación principal">
+          {nav.map(item => <a href={item.href} aria-current={(item.href === '/' ? path === '/' : path.startsWith(item.href)) ? 'page' : undefined}>{item.label}</a>)}
+          <a class="nav-search" href="/buscar/" aria-label="Buscar en el manual"><Icon name="search" size={19}/><span>Buscar</span></a>
+        </nav>
+      </div>
+    </header>
+    <script>
+      const toggle = document.querySelector<HTMLButtonElement>('.menu-toggle');
+      const nav = document.querySelector<HTMLElement>('#primary-navigation');
+      if (toggle && nav) {
+        document.documentElement.classList.add('js');
+        const mobile = window.matchMedia('(max-width: 64rem)');
+        let lastMenuFocus: Element | null = null;
+        document.addEventListener('focusin', (event) => {
+          const target = event.target;
+          if (target instanceof Element && target !== document.body) {
+            lastMenuFocus = toggle.contains(target) || nav.contains(target) ? target : null;
+          }
+        });
+        document.addEventListener('pointerdown', (event) => {
+          if (event.target instanceof Node && !toggle.contains(event.target) && !nav.contains(event.target)) lastMenuFocus = null;
+        });
+        function setOpen(open: boolean) {
+          if (!toggle || !nav) return;
+          toggle.setAttribute('aria-expanded', String(open));
+          toggle.setAttribute('aria-label', open ? 'Cerrar menú' : 'Abrir menú');
+          nav.classList.toggle('is-open', open);
+        }
+        toggle.addEventListener('click', () => setOpen(toggle.getAttribute('aria-expanded') !== 'true'));
+        mobile.addEventListener('change', () => {
+          // CSS can hide the focused element before matchMedia's change event.
+          // Retain the last menu focus only when the browser has fallen back to body.
+          const active = document.activeElement === document.body ? lastMenuFocus : document.activeElement;
+          setOpen(false);
+          if (mobile.matches && nav.contains(active)) toggle.focus();
+          if (!mobile.matches && active === toggle) (nav.querySelector<HTMLAnchorElement>('a[aria-current="page"]') ?? nav.querySelector<HTMLAnchorElement>('a'))?.focus();
+        });
+        document.addEventListener('keydown', (event) => {
+          if (event.key === 'Escape' && mobile.matches && toggle.getAttribute('aria-expanded') === 'true') {
+            setOpen(false); toggle.focus();
+          }
+        });
+      }
+    </script>

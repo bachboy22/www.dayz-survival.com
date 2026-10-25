@@ -1,11 +1,15 @@
 ---
-import { demoArticle } from '../data/demo';
-import Icon from './Icon.astro';
+import type { PrototypeArticle } from '../data/catalog';
+import { mapLabels } from '../data/catalog';
+import EvidenceLabel from './content/EvidenceLabel.astro';
+interface Props { article: PrototypeArticle; headingLevel?: 2 | 3; view?: 'manual' | 'card' }
+const { article, headingLevel = 3, view = 'manual' } = Astro.props;
+const Heading = `h${headingLevel}`;
 ---
-<article class="featured-card" data-search-result>
-  <div class="card-kicker"><span>01 / LECTURA DE CAMPO</span><span class="pill demo">Demostración</span></div>
-  <h3><a href={`/manual/${demoArticle.slug}/`}>{demoArticle.title}</a></h3>
-  <p>{demoArticle.summary}</p>
-  <div class="tag-list" style="margin-top:18px">{demoArticle.tags.map(tag => <span class="tag">{tag}</span>)}</div>
-  <div class="card-bottom"><span class="card-meta"><Icon name="clock" size={15}/>{demoArticle.readingMinutes} min de lectura · {demoArticle.id}</span><a class="text-link" href={`/manual/${demoArticle.slug}/`}>Leer el ejemplo <Icon size={17}/></a></div>
+<article class="featured-card" data-search-result data-content-id={article.id}>
+  <div class="card-kicker"><span>{article.id} / {article.topic}</span><span class="pill demo">DEMO · Demostración</span></div>
+  <Heading><a data-result-link href={view === 'card' ? `/fichas/${article.slug}/` : `/manual/${article.slug}/`}>{article.title}</a></Heading>
+  <p>{article.summary}</p><div class="tag-list">{article.tags.map(tag => <span class="tag">{tag}</span>)}</div>
+  <EvidenceLabel compact/>
+  <div class="card-bottom"><span class="card-meta">{article.readingMinutes} min de lectura · {mapLabels[article.mapScope]}</span><a data-result-action class="text-link" href={view === 'card' ? `/fichas/${article.slug}/` : `/manual/${article.slug}/`}>{view === 'card' ? 'Abrir la ficha rápida' : 'Abrir lectura extensa'} <span class="sr-only">: {article.title}</span> →</a></div>
 </article>
