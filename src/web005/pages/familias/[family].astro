@@ -1,0 +1,8 @@
+---
+import Layout from '../../components/Layout.astro';
+import Card from '../../components/Card.astro';
+import {entries,families} from '../../catalog';
+export function getStaticPaths(){return Object.entries(families).map(([family,label])=>({params:{family},props:{family,label}}));}
+const {family,label}=Astro.props;const selected=entries.filter(e=>e.category===family);
+---
+<Layout title={label}><p class="meta">ÍNDICE EDITORIAL / {family}</p><h1>{label}</h1><p>{selected.length} artículos completos. Los estados de origen se conservan sin convertirlos en verificación técnica.</p><a class="button" href={`/enciclopedia/?family=${family}`}>Buscar en esta familia</a><ul class="cards">{selected.map(e=><Card entry={e}/>)}</ul></Layout>

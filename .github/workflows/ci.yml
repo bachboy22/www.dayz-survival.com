@@ -35,6 +35,8 @@ jobs:
         run: npm run validate
       - name: Run unit tests
         run: npm run test:unit
+      - name: Test WEB-005 offline server with synthetic files
+        run: node --test tools/web-005/server.test.cjs
       - name: Build the local static demo
         run: npm run build
       - name: Install Chromium

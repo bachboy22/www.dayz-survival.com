@@ -1,0 +1,8 @@
+---
+import Layout from '../../components/Layout.astro';
+import Card from '../../components/Card.astro';
+import {entries} from '../../catalog';
+export function getStaticPaths(){return [{params:{map:'chernarus'},props:{category:'CHR',title:'Chernarus Plus'}},{params:{map:'livonia'},props:{category:'LIV',title:'Livonia'}}];}
+const {category,title}=Astro.props;const selected=entries.filter(e=>e.category===category);
+---
+<Layout title={`Atlas ${title}`}><p class="meta">ATLAS INDEPENDIENTE / {category}</p><h1>{title}</h1><p class="lead">{selected.length} expedientes territoriales completos.</p><div class="paper"><h2>Índice territorial documental</h2><p>Sin mapa georreferenciado. La publicación de geometría requiere cartografía autorizada, atribución y precisión comprobada. La aceptación editorial no certifica rutas, loot ni funcionamiento del cliente.</p><a href={category==='CHR'?'/atlas/livonia/':'/atlas/chernarus/'}>Consultar el atlas independiente de {category==='CHR'?'Livonia':'Chernarus Plus'} →</a></div><ul class="cards">{selected.map(e=><Card entry={e}/>)}</ul></Layout>

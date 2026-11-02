@@ -1,0 +1,16 @@
+---
+import '../style.css';
+interface Props {title: string; description?: string}
+const {title,description='Revisión privada WORK-MASTER-308. Corpus íntegro; aprobación editorial y evidencia técnica independientes.'}=Astro.props;
+const links=[['Inicio','/'],['Enciclopedia','/enciclopedia/'],['Chernarus','/atlas/chernarus/'],['Livonia','/atlas/livonia/'],['Guías prácticas','/familias/GUI/'],['Archivo técnico','/familias/ARC/'],['Proyecto','/proyecto/']];
+---
+<!doctype html><html lang="es"><head><meta charset="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><meta name="robots" content="noindex, nofollow"/><meta name="description" content={description}/><meta name="theme-color" content="#173629"/><title>{title} · DAYZ-SURVIVAL</title></head><body>
+<a class="skip-link" href="#main-content">Saltar al contenido</a>
+<div class="edition"><span>ARCHIVE-86 / TERMINAL DE CAMPO</span><span>WEB-005 · REVISIÓN PRIVADA</span></div>
+<header><a class="brand" href="/">DAYZ-SURVIVAL<small>THE CHERNARUS FIELD MANUAL</small></a><details class="navigation"><summary>Menú de navegación</summary><nav aria-label="Navegación principal">{links.map(([label,href])=><a href={href} aria-current={Astro.url.pathname===href?'page':undefined}>{label}</a>)}</nav></details></header>
+<main id="main-content" tabindex="-1"><slot/></main>
+<footer><p>DayZ Standalone · PC vanilla oficial. Consulta documental privada; no certifica todas las mecánicas para PC Stable 1.30.</p><a href="/revision/">Hoja de revisión y exportación local</a> · <a href="/INTEGRITY.json">Manifiesto de integridad</a><p>Sin cuentas, analítica ni telemetría. Los enlaces a fuentes externas solo se abren si decides consultarlos.</p></footer>
+<script>
+ const menu=document.querySelector<HTMLDetailsElement>('.navigation');
+ document.addEventListener('keydown',e=>{if(e.key==='Escape'&&menu?.open){menu.open=false;menu.querySelector('summary')?.focus();}});
+</script></body></html>
