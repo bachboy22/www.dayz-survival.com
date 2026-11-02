@@ -1,6 +1,10 @@
 """Export an already verified WEB-005 Astro build; never alter source manuscripts."""
 import argparse,hashlib,html,json,re,shutil,zipfile
 from pathlib import Path
+import sys
+from importlib import import_module
+sys.path.insert(0,str(Path(__file__).parents[1]/'web-005'))
+visible=import_module('import-corpus').text
 
 def sha(b):return hashlib.sha256(b).hexdigest()
 
@@ -35,6 +39,14 @@ def export(source,corpus,output):
         s=s.replace('WEB-005 · REVISIÓN PRIVADA','WEB-006 · REVISIÓN PREVIA A PUBLICACIÓN')
         s=s.replace('Los originales se conservan byte a byte y se pueden descargar desde cada artículo.','Los originales históricos se conservan sin modificaciones fuera de este paquete. Cada artículo registra el SHA-256 del manuscrito.')
         s=re.sub(r'<script\b[^>]*>.*?</script>',lambda m:m[0].replace('WEB-005','WEB-006'),s,flags=re.S)
+        if p.relative_to(output).as_posix()=='articulos/EQP-02-02/index.html':
+            # A legacy smart-typography conversion changed an interface literal.
+            # Restore the two source tokens in presentation; never write the MD.
+            raw=z.read('entrega_integral/manuscritos/EQP-02-02.md').decode('utf-8')
+            assert raw.count('«---»')==2
+            match=re.search(r'<div class="manuscript">(.*?)</div>',s,re.S)
+            assert match and match[1].count('«—»')==2
+            s=s[:match.start(1)]+match[1].replace('«—»','«---»')+s[match.end(1):]
         p.write_text(s)
     articles=[]
     originals_by_id={r['id']:r for r in original_report['articles']}
@@ -42,6 +54,9 @@ def export(source,corpus,output):
         raw=z.read('entrega_integral/'+row['file']);r=originals_by_id[row['id']]
         assert sha(raw)==r['source_hash'] and raw.strip()
         articles.append({'id':row['id'],'source_hash':r['source_hash'],'source_bytes':len(raw),'rendered_text_hash':r['rendered_text_hash'],'editorial_status_origin':row['status'],'technical_status':'PENDIENTE_DE_REVISION_ATOMICA','client_test_status':'NO_PROBADO','private_review_authorized':True,'public_publication_authorized':False})
+        if row['id']=='EQP-02-02':
+            body=re.search(r'<div class="manuscript">(.*?)</div>',(output/'articulos/EQP-02-02/index.html').read_text(),re.S)[1]
+            articles[-1].update({'prior_rendered_text_hash':r['rendered_text_hash'],'rendered_text_hash':sha(visible(body).encode()),'presentation_repairs':[{'source_literal':'«---»','legacy_rendered_literal':'«—»','restored_occurrences':2,'original_modified':False}]})
     manifest={'contract':'WEB-006','source_commit':'1fa920c92f8f02faa78d65cfde669810bd95bdc6','corpus_archive_sha256':sha(corpus.read_bytes()),'count':308,'historical_ids':294,'livonia_ids':14,'source_bytes_preserved':True,'game_mechanics_certified':False,'articles':articles}
     (output/'INTEGRITY.json').write_text(json.dumps(manifest,ensure_ascii=False,indent=2))
     (output/'robots.txt').write_text('User-agent: *\nDisallow: /\n')
