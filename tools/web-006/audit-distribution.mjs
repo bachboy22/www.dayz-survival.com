@@ -1,0 +1,36 @@
+import {chromium} from '@playwright/test';
+import AxeBuilder from '@axe-core/playwright';
+import fs from 'node:fs/promises';
+import path from 'node:path';
+import {pathToFileURL} from 'node:url';
+import assert from 'node:assert/strict';
+const [origin,file,out]=process.argv.slice(2);await fs.mkdir(out,{recursive:true});
+const browser=await chromium.launch({executablePath:chromium.executablePath(),headless:true});
+const records=[];const errors=[],external=[];
+async function record(p,label,width){const m=await p.evaluate(()=>({width:innerWidth,scroll:document.documentElement.scrollWidth}));assert(m.scroll<=m.width+1,JSON.stringify({label,...m}));const a=await new AxeBuilder({page:p}).withTags(['wcag2a','wcag2aa','wcag21aa','wcag22aa']).analyze();records.push({label,width,metrics:m,violations:a.violations.map(v=>({id:v.id,targets:v.nodes.map(n=>n.target)}))});}
+try{
+for(const mode of ['pages','file'])for(const width of [320,768,1440]){
+ const context=await browser.newContext({viewport:{width,height:960},reducedMotion:'reduce',offline:mode==='file',acceptDownloads:true});const p=await context.newPage();p.on('pageerror',e=>errors.push(e.message));p.on('request',r=>{if(/^https?:/.test(r.url())&&(mode==='file'||!r.url().startsWith(origin)))external.push(r.url());});
+ const base=mode==='pages'?origin:pathToFileURL(path.resolve(file)).href;
+ const go=async route=>{await p.goto(base+(mode==='file'?'#':'')+route);await p.waitForTimeout(150);};
+ await go('/');await record(p,mode+':home',width);if(mode==='file'){assert(await p.locator('#main-content').evaluate(e=>e===document.activeElement));await p.locator('.skip-link').focus();}else{await p.keyboard.press('Tab');}assert(await p.locator('.skip-link').evaluate(e=>e===document.activeElement));await p.keyboard.press('Enter');assert(await p.locator('#main-content').evaluate(e=>e===document.activeElement));
+ await p.locator('.navigation summary').focus();await p.keyboard.press('Enter');assert(await p.locator('.navigation').evaluate(e=>e.open));await p.keyboard.press('Escape');assert(!(await p.locator('.navigation').evaluate(e=>e.open)));
+ await p.locator('#home-search').fill('MAN-01-01');await p.getByRole('button',{name:'Buscar',exact:true}).click();await p.waitForFunction(()=>document.querySelector('#query')?.value==='MAN-01-01');await p.waitForTimeout(350);assert(await p.locator('#results .card').count()>=1);assert.equal(await p.locator('#results a').first().getAttribute('href'),'/articulos/MAN-01-01/');
+ await p.getByRole('button',{name:'Limpiar búsqueda y filtros'}).click();await p.waitForTimeout(300);await p.locator('[name=family]').selectOption('LIV');await p.waitForTimeout(300);assert.match(await p.locator('#search-status').textContent(),/14 artículos/);await p.locator('#next').focus();await p.keyboard.press('Enter');assert.equal(await p.locator('#results .card').count(),2);assert(await p.locator('#next').evaluate(e=>e===document.activeElement));
+ await p.locator('[name=technical]').selectOption('verified');await p.waitForTimeout(300);assert(await p.locator('#empty').isVisible());await p.getByRole('button',{name:'Limpiar búsqueda y filtros'}).click();await p.waitForTimeout(300);await p.locator('#query').fill('<img src=x onerror=alert(1)>');await p.waitForTimeout(300);assert(await p.locator('#empty').isVisible());assert.equal(await p.locator('#results img').count(),0);await record(p,mode+':search',width);await p.screenshot({path:path.join(out,`${mode}-search-${width}.png`),fullPage:true});
+ await go('/articulos/MAN-01-01/');const before=await p.locator('.reader').evaluate(e=>parseFloat(getComputedStyle(e).fontSize));const more=p.getByRole('button',{name:'Aumentar tamaño del texto'});await more.focus();for(let i=0;i<3;i++)await p.keyboard.press('Enter');assert.equal(await more.getAttribute('aria-disabled'),'true');assert(await p.locator('.reader').evaluate(e=>parseFloat(getComputedStyle(e).fontSize))>before);assert.match(await p.locator('#text-size-status').textContent(),/135/);await p.getByRole('button',{name:'Reducir tamaño del texto'}).click();assert.equal(await more.getAttribute('aria-disabled'),'false');await record(p,mode+':reader',width);await p.screenshot({path:path.join(out,`${mode}-reader-${width}.png`),fullPage:false});
+ await go('/articulos/ARC-01-01/');const link=p.locator('.manuscript a[href^="/articulos/"]').filter({hasNotText:'ARC-01-01'}).first();const href=await link.getAttribute('href');assert(href);await link.click();await p.waitForFunction(()=>document.querySelector('.manuscript'));assert.match(p.url(),new RegExp(href));
+ await go('/atlas/chernarus/');assert.equal(await p.locator('.card').count(),70);await record(p,mode+':chernarus',width);await go('/atlas/livonia/');assert.equal(await p.locator('.card').count(),14);await record(p,mode+':livonia',width);
+ await go('/referencias/com_01/fuentes/afirmaciones/');assert((await p.locator('pre').textContent()).length>30000);await record(p,mode+':reference',width);
+ await go('/revision/');await p.locator('[name=comments]').fill('WEB-006 · evaluación sintética, no aprobación humana');for(const format of ['json','txt']){const [d]=await Promise.all([p.waitForEvent('download'),p.locator('#export-'+format).click()]);await d.saveAs(path.join(out,`${mode}-${width}.${format}`));assert.match(await fs.readFile(path.join(out,`${mode}-${width}.${format}`),'utf8'),/WEB-006/);}
+ if(mode==='pages'){
+  const plain=await browser.newContext({javaScriptEnabled:false,viewport:{width,height:960}});const np=await plain.newPage();await np.goto(origin+'/familias/LIV/');assert.equal(await np.locator('.card').count(),14);await np.goto(origin+'/articulos/MAN-01-01/');assert((await np.locator('.manuscript p').count())>5);await plain.close();
+ }
+ await context.close();
+}
+const c=await browser.newContext();const integrity=await c.request.get(origin+'/INTEGRITY.json');assert.equal(integrity.status(),200);assert.match(integrity.headers()['content-type'],/json/);const manifest=await integrity.json();assert.equal(manifest.articles.length,308);
+for(const row of manifest.articles){const r=await c.request.get(origin+'/articulos/'+row.id+'/');assert.equal(r.status(),200);assert.match(r.headers()['content-type'],/html/);const body=await r.text();assert(body.includes(row.source_hash));}
+assert.equal((await c.request.get(origin+'/route-that-does-not-exist/')).status(),404);for(const route of ['/originales/MAN-01-01.md','/package.json','/runtime/node.exe','/.env','/auxiliares/com_01/PROTOCOLOS_v016.md'])assert.equal((await c.request.get(origin+route)).status(),404);
+assert.equal((await c.request.get(origin+'/enciclopedia')).status(),200);await c.close();assert.deepEqual(errors,[]);assert.deepEqual(external,[]);
+await fs.writeFile(path.join(out,'browser-results.json'),JSON.stringify({records,axeAudits:records.length,axeViolations:records.reduce((n,r)=>n+r.violations.length,0),articlesHTTPChecked:308,fileURLActuallyLoaded:true,fileOffline:true,viewports:[320,768,1440],pageErrors:errors,externalRequests:external,windowsTested:false,physicalDevicesTested:false},null,2));assert(records.every(r=>r.violations.length===0));console.log(JSON.stringify({axe:records.length,violations:0,articles:308,fileURL:true,errors,external}));
+}finally{await browser.close();}
