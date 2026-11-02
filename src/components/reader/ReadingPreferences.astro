@@ -1,4 +1,8 @@
-<div class="reader-tools"><span class="reader-label">CUADERNO DE DEMOSTRACIÓN</span><div class="size-controls"><span class="tool-label">TEXTO</span><button type="button" id="text-smaller" aria-controls="reader-content" aria-disabled="true" aria-label="Reducir tamaño del texto">A−</button><button type="button" id="text-larger" aria-controls="reader-content" aria-disabled="false" aria-label="Aumentar tamaño del texto">A+</button></div></div>
+---
+interface Props { label?: string }
+const {label='CUADERNO DE DEMOSTRACIÓN'}=Astro.props;
+---
+<div class="reader-tools"><span class="reader-label">{label}</span><div class="size-controls"><span class="tool-label">TEXTO</span><button type="button" id="text-smaller" aria-controls="reader-content" aria-disabled="true" aria-label="Reducir tamaño del texto">A−</button><button type="button" id="text-larger" aria-controls="reader-content" aria-disabled="false" aria-label="Aumentar tamaño del texto">A+</button></div></div>
 <p class="sr-only" id="text-size-status" role="status" aria-live="polite" aria-atomic="true"></p>
 <script>
 const reader = document.querySelector<HTMLElement>('.reader');

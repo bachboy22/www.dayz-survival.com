@@ -1,0 +1,6 @@
+---
+import { families, states, type Entry } from '../catalog';
+interface Props {entry: Entry}
+const {entry:e}=Astro.props;
+---
+<li class="card"><span class="meta">{e.id} / {families[e.category]} / {e.map}</span><h2><a href={`/articulos/${e.id}/`}>{e.title}</a></h2><p>{states[e.status]??e.status}</p><p class="technical">Técnica: pendiente de revisión atómica · cliente no probado</p><a href={`/articulos/${e.id}/`}>Leer artículo completo <span class="sr-only">{e.id}</span> →</a></li>

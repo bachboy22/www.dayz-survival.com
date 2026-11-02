@@ -63,6 +63,8 @@ for (const factor of [2, 4]) {
     const extension = fileURLToPath(new URL('../fixtures/zoom-extension/', import.meta.url));
     const context = await chromium.launchPersistentContext(profile, {
       channel: 'chromium', headless: true, viewport: { width: 1280, height: 960 }, reducedMotion: 'reduce',
+      executablePath: process.env.PLAYWRIGHT_ZOOM_EXECUTABLE_PATH ?? chromium.executablePath(),
+      ignoreDefaultArgs: ['--disable-extensions'],
       args: [`--disable-extensions-except=${extension}`, `--load-extension=${extension}`],
     });
     const records: object[] = [];
