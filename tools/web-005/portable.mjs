@@ -16,6 +16,7 @@ function renderSearch(){
 function mount(){
  const route=location.hash.slice(1)||'/';const [pathname,query]=route.split('?');
  const record=data.pages[pathname]??data.pages['/404.html'];main.innerHTML=record.main;document.title=record.title;pageNumber=1;level=0;
+ const reader=document.querySelector('.reader');if(reader)reader.style.setProperty('--reader-size','1.02rem');
  document.querySelectorAll('header nav a').forEach(a=>{a.removeAttribute('aria-current');if(a.getAttribute('href')===pathname)a.setAttribute('aria-current','page');});document.querySelector('.navigation').open=false;
  const form=document.querySelector('#catalog-search');if(form){const p=new URLSearchParams(query);for(const key of ['q','family','map','state','technical'])form.elements.namedItem(key).value=(p.get(key)||'').slice(0,key==='q'?200:80);renderSearch();}
  main.focus();window.scrollTo(0,0);
