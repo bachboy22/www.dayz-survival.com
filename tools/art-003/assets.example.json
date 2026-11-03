@@ -1,0 +1,19 @@
+{
+  "schema_version": 1,
+  "contract": "ART-003",
+  "reference_concepts": {
+    "count_declared_by_owner": 3,
+    "origin": "OpenAI-generated under the project owner's creative direction",
+    "files_received": false,
+    "authorized_use": "creative-reference-only",
+    "individually_approved_for_final_use": false,
+    "is_game_capture": false,
+    "is_verified_cartography": false
+  },
+  "assets": [
+    {"id":"cover","map_scope":"general","purpose":"Atmospheric home composition","final_selected":false,"origin":null,"creator":null,"source_ref":null,"rights_ref":null,"selection_ref":null,"alt":null,"caption":null,"publication_authorized":false,"variants":[]},
+    {"id":"man-01-01","map_scope":"Chernarus","purpose":"Independent original graphite for MAN-01-01","final_selected":false,"origin":null,"creator":null,"source_ref":null,"rights_ref":null,"selection_ref":null,"alt":null,"caption":null,"publication_authorized":false,"variants":[]},
+    {"id":"chernarus","map_scope":"Chernarus","purpose":"Chernarus artistic identity, not cartography","final_selected":false,"origin":null,"creator":null,"source_ref":null,"rights_ref":null,"selection_ref":null,"alt":null,"caption":null,"publication_authorized":false,"variants":[]},
+    {"id":"livonia","map_scope":"Livonia","purpose":"Livonia artistic identity, not cartography","final_selected":false,"origin":null,"creator":null,"source_ref":null,"rights_ref":null,"selection_ref":null,"alt":null,"caption":null,"publication_authorized":false,"variants":[]}
+  ]
+}
